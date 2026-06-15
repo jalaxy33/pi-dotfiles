@@ -1,0 +1,19 @@
+{
+  "lastChangelogVersion": "0.79.3",
+  "defaultProvider": "zai",
+  "defaultModel": "glm-5.2",
+  "packages": [
+    "npm:pi-mcp-adapter",
+    "npm:pi-subagents",
+    "npm:pi-web-access",
+    "npm:pi-cache-optimizer",
+    "npm:pi-powerline-footer",
+    "npm:@earendil-works/pi-coding-agent",
+    "./npm/node_modules/@earendil-works/pi-coding-agent/examples/extensions/plan-mode",
+    "./npm/node_modules/@earendil-works/pi-coding-agent/examples/extensions/permission-gate.ts",
+    "./npm/node_modules/@earendil-works/pi-coding-agent/examples/extensions/protected-paths.ts",
+    "./npm/node_modules/@earendil-works/pi-coding-agent/examples/extensions/confirm-destructive.ts",
+    "./npm/node_modules/@earendil-works/pi-coding-agent/examples/extensions/dirty-repo-guard.ts"
+  ],
+  "defaultThinkingLevel": "high"
+}

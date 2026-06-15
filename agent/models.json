@@ -1,0 +1,43 @@
+{
+  "providers": {
+    "ark": {
+      "baseUrl": "https://ark.cn-beijing.volces.com/api/coding",
+      "api": "anthropic-messages",
+      "apiKey": "$ARK_API_KEY",
+      "models": [
+        {
+          "id": "glm-5.1",
+          "reasoning": true
+        }
+      ]
+    },
+    "zai": {
+      "models": [
+        {
+          "id": "glm-5.2",
+          "name": "GLM-5.2",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "compat": {
+            "supportsDeveloperRole": false,
+            "thinkingFormat": "zai",
+            "zaiToolStream": true
+          }
+        }
+      ],
+      "compat": {
+        "sendSessionAffinityHeaders": true
+      }
+    }
+  }
+}
