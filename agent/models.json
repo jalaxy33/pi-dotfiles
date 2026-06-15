@@ -11,6 +11,11 @@
         }
       ]
     },
+    "opencode-go": {
+      "compat": {
+        "sendSessionAffinityHeaders": true
+      }
+    },
     "zai": {
       "models": [
         {
