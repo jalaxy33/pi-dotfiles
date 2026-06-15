@@ -44,7 +44,5 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 
 | Extension | Description |
 | -- | -- |
-| [permission-gate.ts](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/examples/extensions/permission-gate.ts) (Official) | Prompts for confirmation before dangerous bash commands (rm -rf, sudo, etc.) |
-| [protected-paths.ts](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/examples/extensions/protected-paths.ts) (Official) | Blocks writes to protected paths (.env, .git/, node_modules/) |
-| [confirm-destructive.ts](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/examples/extensions/confirm-destructive.ts) (Official) | Confirms before destructive session actions (clear, switch, fork) |
-| [dirty-repo-guard.ts](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/examples/extensions/dirty-repo-guard.ts) (Official) | Prevents session changes with uncommitted git changes |
+| [pi-guardrails](https://github.com/aliou/pi-guardrails) | Guardrails adds safety checks (file protection policy, path access control, shell permission control) to Pi. |
+| [pi-sandbox](https://github.com/carderne/pi-sandbox) | Sandbox for pi. |
