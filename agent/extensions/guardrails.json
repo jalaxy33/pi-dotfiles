@@ -3,12 +3,17 @@
   "permissionGate": {
     "patterns": [
       {
-        "pattern": "(?:rtk )?git add .*",
+        "pattern": "(?:rtk )?git add.*",
         "description": "Add Changes",
         "regex": true
       },
       {
-        "pattern": "(?:rtk )?git commit .*",
+        "pattern": "(?:rtk )?git commit.*",
+        "description": "Commit Changes",
+        "regex": true
+      },
+      {
+        "pattern": "(?:rtk )?git push.*",
         "description": "Commit Changes",
         "regex": true
       }
