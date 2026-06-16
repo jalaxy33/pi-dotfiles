@@ -2,3 +2,4 @@
 /sessions
 auth.json
 pi-cache-*.json
+mcp-cache.json
