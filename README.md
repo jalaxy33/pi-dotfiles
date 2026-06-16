@@ -45,4 +45,3 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 | Extension | Description |
 | -- | -- |
 | [pi-guardrails](https://github.com/aliou/pi-guardrails) | Guardrails adds safety checks (file protection policy, path access control, shell permission control) to Pi. |
-| [pi-sandbox](https://github.com/carderne/pi-sandbox) | Sandbox for pi. |
