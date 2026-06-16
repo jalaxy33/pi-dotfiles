@@ -8,7 +8,6 @@
     "npm:pi-subagents",
     "npm:pi-cache-optimizer",
     "npm:pi-powerline-footer",
-    "npm:pi-sandbox",
     "npm:@aliou/pi-guardrails",
     "npm:@earendil-works/pi-coding-agent",
     "./npm/node_modules/@earendil-works/pi-coding-agent/examples/extensions/plan-mode"
