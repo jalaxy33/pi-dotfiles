@@ -1,6 +1,8 @@
 /npm
+/git
 /sessions
 auth.json
 pi-cache-*.json
 mcp-cache.json
+mcp-npx-cache.json
 mcp-onboarding.json

@@ -1,16 +1,17 @@
 {
-  "lastChangelogVersion": "0.79.4",
-  "defaultProvider": "zai",
-  "defaultModel": "glm-5.2",
+  "lastChangelogVersion": "0.79.6",
+  "defaultProvider": "deepseek",
+  "defaultModel": "deepseek-v4-pro",
   "packages": [
     "npm:pi-mcp-adapter",
     "npm:pi-web-access",
-    "npm:pi-subagents",
     "npm:pi-cache-optimizer",
     "npm:pi-powerline-footer",
     "npm:@aliou/pi-guardrails",
-    "npm:@earendil-works/pi-coding-agent",
-    "./npm/node_modules/@earendil-works/pi-coding-agent/examples/extensions/plan-mode"
+    "npm:pi-lens",
+    "npm:pi-caveman",
+    "npm:pi-subagents",
+    "npm:pi-rtk-optimizer"
   ],
   "defaultThinkingLevel": "high",
   "theme": "dark"

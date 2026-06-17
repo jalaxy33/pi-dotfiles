@@ -6,21 +6,8 @@
       "apiKey": "$ARK_API_KEY",
       "models": [
         {
-          "id": "glm-5.1",
-          "reasoning": true
-        }
-      ]
-    },
-    "opencode-go": {
-      "compat": {
-        "sendSessionAffinityHeaders": true
-      }
-    },
-    "zai": {
-      "models": [
-        {
-          "id": "glm-5.2",
-          "name": "GLM-5.2",
+          "id": "glm-latest",
+          "name": "glm-latest",
           "reasoning": true,
           "input": [
             "text"
@@ -36,11 +23,20 @@
           "compat": {
             "supportsDeveloperRole": false,
             "thinkingFormat": "zai",
+            "supportsReasoningEffort": true,
             "zaiToolStream": true
           }
         }
-      ],
+      ]
+    },
+    "opencode-go": {
       "compat": {
+        "sendSessionAffinityHeaders": true
+      }
+    },
+    "deepseek": {
+      "compat": {
+        "supportsLongCacheRetention": true,
         "sendSessionAffinityHeaders": true
       }
     }
