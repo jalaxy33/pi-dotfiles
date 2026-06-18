@@ -18,30 +18,34 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 
 ## Extension list
 
-### Necessary functionalities
+### Core
 
-| Extension | Description | Additional Settings |
-| -- | -- | -- |
-| [pi-mcp-adapter](https://github.com/nicobailon/pi-mcp-adapter) | Enable to use MCP servers with Pi | run `/mcp setup` to import claude mcp settings |
-| [pi-web-access](https://github.com/nicobailon/pi-web-access) | Web search, content extraction, and video understanding for Pi agent.  | add `"workflow: "none"` to [`~/.pi/web-search.json`](./web-search.json) if you prefer non-interactive workflow |
-| [pi-subagents](https://github.com/nicobailon/pi-subagents) | lets Pi delegate work to focused child agents |  |
-| [plan-mode](https://github.com/earendil-works/pi/tree/main/packages/coding-agent/examples/extensions/plan-mode) (Official) | Read-only exploration mode for safe code analysis. | 1. Copy extension folder to `~/.pi/agent/extensions/`; <br>2. use `/plan` to toggle/cancle plan mode |
+| Extension | Description |
+| -- | -- |
+| [pi-mcp-adapter](https://github.com/nicobailon/pi-mcp-adapter) | MCP server integration for Pi |
+| [pi-web-access](https://github.com/nicobailon/pi-web-access) | Web search, content extraction, video understanding |
+| [plan-mode](https://github.com/earendil-works/pi/tree/main/packages/coding-agent/examples/extensions/plan-mode) (Official) | Read-only exploration mode for safe code analysis |
 
-### Memory/Cache Optimization
+### Subagent Workflow
 
-| Extension | Description | Additional Settings |
-| -- | -- | -- |
-| [pi-cache-optimizer](https://github.com/jiangge/pi-cache-optimizer) | Improving provider-side KV / prompt cache hit rates.| Add `"compat": {"sendSessionAffinityHeaders":true}` for some models to [`~/.pi/agent/models.json`](./agent/models.json) |
-| [rtk](https://github.com/rtk-ai/rtk) | Filters and compresses command outputs before they reach your LLM context | run `rtk init -g --agent pi` after installing rtk |
+> Inspired by [this Reddit post](https://www.reddit.com/r/PiCodingAgent/comments/1t41thp/my_powerful_pi_agent_setup/).
 
-### Style & theme
+| Extension | Description |
+| -- | -- |
+| [pi-fork](https://github.com/elpapi42/pi-fork) | Spawn isolated child agents for parallel exploration/review |
+| [pi-observational-memory](https://github.com/elpapi42/pi-observational-memory) | Session-long memory across compactions and handoffs |
+| [pi-minimal-subagent](https://github.com/elpapi42/pi-minimal-subagent) | Lightweight named subagent delegation |
 
-| Extension | Description | Additional Settings |
-| -- | -- | -- |
-| [pi-powerline-footer](https://github.com/nicobailon/pi-powerline-footer) | Customizes the default pi editor with a powerline-style status bar |  |
+### Context & Cache
 
-### Permission & Safety
+| Extension | Description |
+| -- | -- |
+| [pi-cache-optimizer](https://github.com/jiangge/pi-cache-optimizer) | Improve provider-side KV/prompt cache hit rates |
+| [pi-rtk-optimizer](https://github.com/jiangge/pi-rtk-optimizer) | Filter and compress command output before it hits LLM context |
+| [pi-caveman](https://github.com/jonjonrankin/pi-caveman) | Ultra-compressed agent responses (~75% fewer tokens) |
 
-| Extension | Description |  Additional Settings |
-| -- | -- | -- |
-| [pi-guardrails](https://github.com/aliou/pi-guardrails) | Guardrails adds safety checks (file protection policy, path access control, shell permission control) to Pi. | Run `/guardrails:settings` to edit project/global permission settings |
+### Search
+
+| Extension | Description |
+| -- | -- |
+| [pi-fff](https://github.com/ff-labs/pi-fff) | Fuzzy file finding & indexed content grep via FFF engine |

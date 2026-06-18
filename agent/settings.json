@@ -1,7 +1,7 @@
 {
   "lastChangelogVersion": "0.79.6",
-  "defaultProvider": "zai",
-  "defaultModel": "glm-5.2",
+  "defaultProvider": "deepseek",
+  "defaultModel": "deepseek-v4-pro",
   "packages": [
     "npm:pi-mcp-adapter",
     "npm:pi-web-access",
@@ -10,7 +10,8 @@
     "npm:pi-observational-memory",
     "git:github.com/elpapi42/pi-minimal-subagent",
     "npm:pi-rtk-optimizer",
-    "npm:@ff-labs/pi-fff"
+    "npm:@ff-labs/pi-fff",
+    "npm:pi-caveman"
   ],
   "defaultThinkingLevel": "high",
   "theme": "dark"
