@@ -39,6 +39,11 @@
         "supportsLongCacheRetention": true,
         "sendSessionAffinityHeaders": true
       }
+    },
+    "zai": {
+      "compat": {
+        "sendSessionAffinityHeaders": true
+      }
     }
   }
 }
