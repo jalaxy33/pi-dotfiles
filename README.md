@@ -42,7 +42,7 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 | -- | -- |
 | [pi-cache-optimizer](https://github.com/jiangge/pi-cache-optimizer) | Improve provider-side KV/prompt cache hit rates |
 | [pi-rtk-optimizer](https://github.com/jiangge/pi-rtk-optimizer) | Filter and compress command output before it hits LLM context |
-| [pi-caveman](https://github.com/jonjonrankin/pi-caveman) | Ultra-compressed agent responses (~75% fewer tokens) |
+| [pi-caveman](https://github.com/jonjonrankin/pi-caveman) | Ultra-compressed agent responses (~75% output tokens) |
 
 ### Search
 
