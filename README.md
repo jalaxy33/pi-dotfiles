@@ -25,16 +25,21 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 | [pi-mcp-adapter](https://github.com/nicobailon/pi-mcp-adapter) | MCP server integration for Pi |
 | [pi-web-access](https://github.com/nicobailon/pi-web-access) | Web search, content extraction, video understanding |
 | [plan-mode](https://github.com/earendil-works/pi/tree/main/packages/coding-agent/examples/extensions/plan-mode) (Official) | Read-only exploration mode for safe code analysis |
+| [pi-markdown-preview](https://github.com/omaclaren/pi-markdown-preview) | Render Markdown/LaTeX to PDF, HTML, or PNG |
 
-### Subagent Workflow
-
-> Inspired by [this Reddit post](https://www.reddit.com/r/PiCodingAgent/comments/1t41thp/my_powerful_pi_agent_setup/).
+### Safety
 
 | Extension | Description |
 | -- | -- |
-| [pi-fork](https://github.com/elpapi42/pi-fork) | Spawn isolated child agents for parallel exploration/review |
+| [pi-guardrails](https://github.com/aliou/pi-guardrails) | Permission gates for dangerous operations (git push, rm, etc.) |
+| [pi-rewind](https://github.com/arpagon/pi-rewind) | Per-turn snapshots, `/rewind` undo, `Esc+Esc` quick revert |
+
+### Subagent Workflow
+
+| Extension | Description |
+| -- | -- |
+| [pi-subagents](https://github.com/tintinweb/pi-subagents) | Claude Code-style autonomous sub-agents with parallel execution |
 | [pi-observational-memory](https://github.com/elpapi42/pi-observational-memory) | Session-long memory across compactions and handoffs |
-| [pi-minimal-subagent](https://github.com/elpapi42/pi-minimal-subagent) | Lightweight named subagent delegation |
 
 ### Context & Cache
 
@@ -42,10 +47,22 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 | -- | -- |
 | [pi-cache-optimizer](https://github.com/jiangge/pi-cache-optimizer) | Improve provider-side KV/prompt cache hit rates |
 | [pi-rtk-optimizer](https://github.com/MasuRii/pi-rtk-optimizer) | Filter and compress command output before it hits LLM context |
-| [pi-caveman](https://github.com/jonjonrankin/pi-caveman) | Ultra-compressed agent responses (~75% output tokens) |
 
-### Search
+### Search & Analysis
 
 | Extension | Description |
 | -- | -- |
 | [pi-fff](https://github.com/dmtrKovalenko/fff) | Fuzzy file finding & indexed content grep via FFF engine |
+| [pi-codegraph](https://github.com/vndv/pi-codegraph) | Symbol-level code navigation: callers, callees, impact analysis |
+
+### Interaction
+
+| Extension | Description |
+| -- | -- |
+| [ask-user-question](https://github.com/juicesharp/rpiv-mono) | Structured Q&A — LLM asks you instead of guessing |
+
+### Skills
+
+| Extension | Description |
+| -- | -- |
+| [ponytail](https://github.com/DietrichGebert/ponytail) | Lazy senior dev mode — YAGNI-first coding, minimal diffs |
