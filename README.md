@@ -65,4 +65,4 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 
 | Extension | Description |
 | -- | -- |
-| [ponytail](https://github.com/DietrichGebert/ponytail) | Lazy senior dev mode — YAGNI-first coding, minimal diffs |
+| [ponytail](https://github.com/DietrichGebert/ponytail) | Keep the agent from over-engineering — stdlib first, skip abstractions, delete over add |
