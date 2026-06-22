@@ -24,7 +24,6 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 | -- | -- |
 | [pi-mcp-adapter](https://github.com/nicobailon/pi-mcp-adapter) | MCP server integration for Pi |
 | [pi-web-access](https://github.com/nicobailon/pi-web-access) | Web search, content extraction, video understanding |
-| [plan-mode](https://github.com/earendil-works/pi/tree/main/packages/coding-agent/examples/extensions/plan-mode) (Official) | Read-only exploration mode for safe code analysis |
 | [pi-markdown-preview](https://github.com/omaclaren/pi-markdown-preview) | Render Markdown/LaTeX to PDF, HTML, or PNG |
 
 ### Safety
@@ -56,8 +55,11 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 | [pi-fff](https://github.com/dmtrKovalenko/fff) | Fuzzy file finding & indexed content grep via FFF engine |
 | [pi-codegraph](https://github.com/vndv/pi-codegraph) | Symbol-level code navigation: callers, callees, impact analysis |
 
-### Interaction
+### Interaction & Workflow
 
 | Extension | Description |
 | -- | -- |
 | [ask-user-question](https://github.com/juicesharp/rpiv-mono) | Structured Q&A — LLM asks you instead of guessing |
+| [rpiv-btw](https://github.com/juicesharp/rpiv-mono) | The `/btw` command — ask a one-off side question to the main model without polluting the conversation |
+| [rpiv-todo](https://github.com/juicesharp/rpiv-mono) | Live todo-list overlay for the model that survives `/reload` and context compaction |
+| [plannotator](https://github.com/backnotprop/plannotator) | Interactive plan & code review with inline annotations on agent messages and PRs |

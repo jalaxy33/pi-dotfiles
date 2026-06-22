@@ -1,0 +1,23 @@
+{
+  "$schema": "https://unpkg.com/@aliou/pi-guardrails@0.14.1/schema.json",
+  "permissionGate": {
+    "patterns": [
+      {
+        "pattern": "(?:rtk )?git add.*",
+        "description": "Add Changes",
+        "regex": true
+      },
+      {
+        "pattern": "(?:rtk )?git commit.*",
+        "description": "Commit Changes",
+        "regex": true
+      },
+      {
+        "pattern": "(?:rtk )?git push.*",
+        "description": "Push Changes",
+        "regex": true
+      }
+    ]
+  },
+  "version": "0.13.0-20260619"
+}
