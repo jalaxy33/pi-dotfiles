@@ -41,12 +41,13 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 | [pi-subagents](https://github.com/tintinweb/pi-subagents) | Claude Code-style autonomous sub-agents with parallel execution |
 | [pi-observational-memory](https://github.com/elpapi42/pi-observational-memory) | Session-long memory across compactions and handoffs |
 
-### Context & Cache
+### Context & Efficiency
 
 | Extension | Description |
 | -- | -- |
 | [pi-cache-optimizer](https://github.com/jiangge/pi-cache-optimizer) | Improve provider-side KV/prompt cache hit rates |
 | [pi-rtk-optimizer](https://github.com/MasuRii/pi-rtk-optimizer) | Filter and compress command output before it hits LLM context |
+| [ponytail](https://github.com/DietrichGebert/ponytail) | Keep the agent from over-engineering — stdlib first, skip abstractions, delete over add |
 
 ### Search & Analysis
 
@@ -60,9 +61,3 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 | Extension | Description |
 | -- | -- |
 | [ask-user-question](https://github.com/juicesharp/rpiv-mono) | Structured Q&A — LLM asks you instead of guessing |
-
-### Skills
-
-| Extension | Description |
-| -- | -- |
-| [ponytail](https://github.com/DietrichGebert/ponytail) | Keep the agent from over-engineering — stdlib first, skip abstractions, delete over add |
