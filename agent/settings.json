@@ -1,17 +1,21 @@
 {
-  "lastChangelogVersion": "0.79.6",
+  "lastChangelogVersion": "0.79.9",
   "defaultProvider": "deepseek",
   "defaultModel": "deepseek-v4-pro",
   "packages": [
     "npm:pi-mcp-adapter",
     "npm:pi-web-access",
     "npm:pi-cache-optimizer",
-    "git:github.com/elpapi42/pi-fork",
     "npm:pi-observational-memory",
-    "git:github.com/elpapi42/pi-minimal-subagent",
     "npm:pi-rtk-optimizer",
     "npm:@ff-labs/pi-fff",
-    "npm:pi-caveman"
+    "npm:pi-markdown-preview",
+    "npm:pi-rewind",
+    "git:github.com/DietrichGebert/ponytail",
+    "npm:@vndv/pi-codegraph",
+    "npm:@juicesharp/rpiv-ask-user-question",
+    "npm:@tintinweb/pi-subagents",
+    "npm:@aliou/pi-guardrails"
   ],
   "defaultThinkingLevel": "high",
   "theme": "dark"
