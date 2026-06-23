@@ -1,7 +1,7 @@
 {
   "lastChangelogVersion": "0.79.10",
-  "defaultProvider": "zai",
-  "defaultModel": "glm-5.2",
+  "defaultProvider": "deepseek",
+  "defaultModel": "deepseek-v4-pro",
   "packages": [
     "npm:pi-mcp-adapter",
     "npm:pi-web-access",
@@ -9,16 +9,11 @@
     "npm:pi-observational-memory",
     "npm:pi-rtk-optimizer",
     "npm:@ff-labs/pi-fff",
-    "npm:pi-markdown-preview",
-    "npm:pi-rewind",
-    "git:github.com/DietrichGebert/ponytail",
     "npm:@vndv/pi-codegraph",
     "npm:@tintinweb/pi-subagents",
     "npm:@aliou/pi-guardrails",
-    "npm:@plannotator/pi-extension",
-    "npm:@juicesharp/rpiv-ask-user-question",
-    "npm:@juicesharp/rpiv-btw",
-    "npm:@juicesharp/rpiv-todo"
+    "npm:pi-markdown-preview",
+    "npm:@heyhuynhgiabuu/pi-diff"
   ],
   "defaultThinkingLevel": "high",
   "theme": "dark"
