@@ -1,7 +1,5 @@
 {
   "workflow": "none",
-  "provider": "exa",
-  "allowBrowserCookies": false,
   "summaryModel": "deepseek/deepseek-v4-flash",
-  "curatorTimeoutSeconds": 20
+  "provider": "tavily"
 }
