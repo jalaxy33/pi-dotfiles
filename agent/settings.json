@@ -1,7 +1,7 @@
 {
-  "lastChangelogVersion": "0.79.10",
+  "lastChangelogVersion": "0.80.3",
   "defaultProvider": "deepseek",
-  "defaultModel": "deepseek-v4-pro",
+  "defaultModel": "deepseek-v4-flash",
   "packages": [
     "npm:pi-mcp-adapter",
     "npm:pi-web-access",
@@ -13,8 +13,29 @@
     "npm:@tintinweb/pi-subagents",
     "npm:@aliou/pi-guardrails",
     "npm:pi-markdown-preview",
-    "npm:@heyhuynhgiabuu/pi-diff"
+    "npm:@heyhuynhgiabuu/pi-diff",
+    "npm:@tintinweb/pi-tasks",
+    "git:github.com/DietrichGebert/ponytail",
+    {
+      "source": "npm:pi-zai-mcp",
+      "extensions": [
+        "-extensions/zai-mcp-reader.ts",
+        "-extensions/zai-mcp-search.ts",
+        "-extensions/zai-mcp-zread.ts",
+        "+extensions/zai-mcp-status.ts",
+        "+extensions/zai-mcp-vision.ts"
+      ]
+    }
   ],
   "defaultThinkingLevel": "high",
-  "theme": "dark"
+  "theme": "dark",
+  "hideThinkingBlock": false,
+  "observational-memory": {
+    "compactAfterTokensMode": "ratio",
+    "model": {
+      "provider": "deepseek",
+      "id": "deepseek-v4-flash",
+      "thinking": "low"
+    }
+  }
 }
