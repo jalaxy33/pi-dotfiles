@@ -15,7 +15,6 @@
     "npm:pi-markdown-preview",
     "npm:@heyhuynhgiabuu/pi-diff",
     "npm:@tintinweb/pi-tasks",
-    "git:github.com/DietrichGebert/ponytail",
     {
       "source": "npm:pi-zai-mcp",
       "extensions": [

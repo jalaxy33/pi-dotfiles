@@ -16,6 +16,11 @@
         "pattern": "(?:rtk )?git push.*",
         "description": "Push Changes",
         "regex": true
+      },
+      {
+        "pattern": "(?:rtk )?git merge.*",
+        "description": "Merge Branches",
+        "regex": true
       }
     ]
   },
