@@ -30,7 +30,7 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 
 | Extension | Description |
 | -- | -- |
-| [pi-zai-mcp](https://github.com/fitchmultz/pi-zai-mcp) | Z.AI MCP tools — primarily vision MCP for image/video understanding on non-multimodal models |
+| [pi-multimodal-proxy](https://github.com/pungggi/pi-multimodal-proxy) | Lets non-vision models understand images via a vision model |
 
 ### Safety
 
@@ -45,12 +45,6 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 | [pi-subagents](https://github.com/tintinweb/pi-subagents) | Claude Code-style autonomous sub-agents with parallel execution |
 | [pi-observational-memory](https://github.com/elpapi42/pi-observational-memory) | Session-long memory across compactions and handoffs |
 | [pi-tasks](https://github.com/tintinweb/pi-tasks) | Claude Code-style task tracking with dependency management and coordination |
-
-### Behavior & Methodology
-
-| Extension | Description |
-| -- | -- |
-| [ponytail](https://github.com/DietrichGebert/ponytail) | Lazy senior dev mode — YAGNI enforcement, shortest-working-diff discipline |
 
 ### Context & Efficiency
 
