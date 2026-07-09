@@ -2,6 +2,8 @@
 /git
 /sessions
 /logs
+
+.env
 auth.json
 pi-cache-*.json
 mcp-cache.json

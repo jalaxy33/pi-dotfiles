@@ -15,7 +15,8 @@
     "npm:pi-markdown-preview",
     "npm:@heyhuynhgiabuu/pi-diff",
     "npm:@tintinweb/pi-tasks",
-    "https://github.com/pungggi/pi-multimodal-proxy"
+    "https://github.com/pungggi/pi-multimodal-proxy",
+    "npm:@pi-lab/env"
   ],
   "defaultThinkingLevel": "high",
   "theme": "dark",
