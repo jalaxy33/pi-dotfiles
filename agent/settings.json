@@ -1,7 +1,7 @@
 {
   "lastChangelogVersion": "0.80.3",
   "defaultProvider": "deepseek",
-  "defaultModel": "deepseek-v4-flash",
+  "defaultModel": "deepseek-v4-pro",
   "packages": [
     "npm:pi-mcp-adapter",
     "npm:pi-web-access",
@@ -14,9 +14,15 @@
     "npm:@aliou/pi-guardrails",
     "npm:pi-markdown-preview",
     "npm:@heyhuynhgiabuu/pi-diff",
-    "npm:@tintinweb/pi-tasks",
-    "https://github.com/pungggi/pi-multimodal-proxy",
-    "npm:@pi-lab/env"
+    {
+      "source": "npm:@tintinweb/pi-tasks",
+      "extensions": [
+        "-src/index.ts"
+      ]
+    },
+    "npm:@pi-lab/env",
+    "npm:pi-multimodal-proxy",
+    "git:github.com/jalaxy33/pi-tasks"
   ],
   "defaultThinkingLevel": "high",
   "theme": "dark",
