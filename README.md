@@ -24,10 +24,10 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 - **Extend for what's missing** — MCP, sub-agents, tasks, vision — added via community extensions
 - **Restrained yet flexible safety** — guard only irreversible operations (git push, delete), no noisy prompts
 
-### Deliberately Skipped
+### Deliberately Unused
 
 - **Plan mode** — no need to lock agent in read-only. Write plans to files, execute with the task and subagent extension
-- **Goal mode** — not useful for daily work yet
+- **Goal mode** — not useful enough
 - **Background bash** — barely used
 
 ## Extension list
@@ -44,7 +44,7 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 
 | Extension | Description |
 | -- | -- |
-| [pi-multimodal-proxy](https://github.com/pungggi/pi-multimodal-proxy) | Lets non-vision models understand images via a vision model |
+| [pi-multimodal-proxy](https://github.com/pungggi/pi-multimodal-proxy) | Let non-vision models understand images via a vision model |
 
 ### Safety
 
