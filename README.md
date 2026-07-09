@@ -16,7 +16,7 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
    git clone https://github.com/jalaxy33/pi-dotfiles ~/.pi
    ```
 
-3. (Optional) If you want to the same skills I'm using:
+3. (Optional) If you want to the same [skills I'm using](https://github.com/jalaxy33/skills-using):
  
     ```sh
     # (optional) backup ~/.agents
