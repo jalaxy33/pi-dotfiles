@@ -16,6 +16,22 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
    git clone https://github.com/jalaxy33/pi-dotfiles ~/.pi
    ```
 
+3. (Optional) If you want to the same skills I'm using:
+ 
+    ```sh
+    # (optional) backup ~/.agents
+    mv ~/.agents ~/.agents-bak
+
+    # clone skills repo
+    git clone https://github.com/jalaxy33/skills-using ~/.agents
+
+    # update skills to latest
+    npx skills update -g
+    ```
+
+    pi will load skills from `~/.agents/skills/` automatically.
+
+
 ## Design Philosophy
 
 ### Principles
