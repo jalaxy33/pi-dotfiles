@@ -15,16 +15,7 @@
     "npm:pi-markdown-preview",
     "npm:@heyhuynhgiabuu/pi-diff",
     "npm:@tintinweb/pi-tasks",
-    {
-      "source": "npm:pi-zai-mcp",
-      "extensions": [
-        "-extensions/zai-mcp-reader.ts",
-        "-extensions/zai-mcp-search.ts",
-        "-extensions/zai-mcp-zread.ts",
-        "+extensions/zai-mcp-status.ts",
-        "+extensions/zai-mcp-vision.ts"
-      ]
-    }
+    "https://github.com/pungggi/pi-multimodal-proxy"
   ],
   "defaultThinkingLevel": "high",
   "theme": "dark",

@@ -1,18 +1,21 @@
 {
   "providers": {
     "opencode-go": {
+      "apiKey": "$OPENCODE_API_KEY",
       "compat": {
         "sendSessionAffinityHeaders": true,
         "supportsLongCacheRetention": true
       }
     },
     "deepseek": {
+      "apiKey": "$DEEPSEEK_API_KEY",
       "compat": {
         "supportsLongCacheRetention": true,
         "sendSessionAffinityHeaders": true
       }
     },
     "zai": {
+      "apiKey": "$ZAI_API_KEY",
       "compat": {
         "sendSessionAffinityHeaders": true
       }
