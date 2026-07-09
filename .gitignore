@@ -1,3 +1,5 @@
 /cache
 /.pi
 /tasks
+
+.env

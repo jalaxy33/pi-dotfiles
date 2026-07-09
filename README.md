@@ -16,6 +16,20 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
    git clone https://github.com/jalaxy33/pi-dotfiles ~/.pi
    ```
 
+## Design Philosophy
+
+### Principles
+
+- **Fit my workflow, not for everyone** — solve real needs, not chase universality
+- **Extend for what's missing** — MCP, sub-agents, tasks, vision — added via community extensions
+- **Restrained yet flexible safety** — guard only irreversible operations (git push, delete), no noisy prompts
+
+### Deliberately Skipped
+
+- **Plan mode** — no need to lock agent in read-only. Write plans to files, execute with the task extension
+- **Goal mode** — not useful for daily work yet
+- **Background bash** — barely used
+
 ## Extension list
 
 ### Core
@@ -24,7 +38,7 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 | -- | -- |
 | [pi-mcp-adapter](https://github.com/nicobailon/pi-mcp-adapter) | MCP server integration for Pi |
 | [pi-web-access](https://github.com/nicobailon/pi-web-access) | Web search, content extraction, video understanding |
-| [pi-markdown-preview](https://github.com/omaclaren/pi-markdown-preview) | Render Markdown/LaTeX to PDF, HTML, or PNG |
+| [pi-markdown-preview](https://github.com/omaclaren/pi-markdown-preview) | Render Markdown/LaTeX to PDF, HTML, or PNG (requires: [pandoc](https://pandoc.org/installing.html), any Chromium-based browser, [mermaid-cli](https://github.com/mermaid-js/mermaid-cli)) |
 
 ### Vision & Media
 
@@ -52,11 +66,12 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 | -- | -- |
 | [pi-cache-optimizer](https://github.com/jiangge/pi-cache-optimizer) | Improve provider-side KV/prompt cache hit rates |
 | [pi-rtk-optimizer](https://github.com/MasuRii/pi-rtk-optimizer) | Filter and compress command output before it hits LLM context |
+| [@pi-lab/env](https://github.com/pi-lab/pi-env) | Load env vars for pi from `settings.json` and `~/.pi/agent/.env` |
 
 ### Search & Navigation
 
 | Extension | Description |
 | -- | -- |
 | [pi-fff](https://github.com/dmtrKovalenko/fff) | Fuzzy file finding & indexed content grep via FFF engine |
-| [pi-codegraph](https://github.com/vndv/pi-codegraph) | Symbol-level code navigation: callers, callees, impact analysis |
+| [pi-codegraph](https://github.com/vndv/pi-codegraph) | Symbol-level code navigation: callers, callees, impact analysis (requires: globally-installed [codegraph](https://github.com/colbymchenry/codegraph)) |
 | [pi-diff](https://github.com/heyhuynhgiabuu/pi-diff) | Syntax-highlighted git diff rendering (split & unified views) |
