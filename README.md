@@ -26,7 +26,7 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 
 ### Deliberately Skipped
 
-- **Plan mode** — no need to lock agent in read-only. Write plans to files, execute with the task extension
+- **Plan mode** — no need to lock agent in read-only. Write plans to files, execute with the task and subagent extension
 - **Goal mode** — not useful for daily work yet
 - **Background bash** — barely used
 
