@@ -1,5 +1,5 @@
 {
   "workflow": "none",
   "summaryModel": "deepseek/deepseek-v4-flash",
-  "provider": "tavily"
+  "provider": "exa"
 }
