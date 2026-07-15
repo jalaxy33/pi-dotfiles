@@ -2,6 +2,7 @@
 /git
 /sessions
 /logs
+/skills
 
 .env
 auth.json
