@@ -5,6 +5,7 @@
 /skills
 
 .env
+models-store.json
 auth.json
 pi-cache-*.json
 mcp-cache.json
