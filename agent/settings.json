@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.80.10",
+  "lastChangelogVersion": "0.81.1",
   "defaultProvider": "wd-CPAMP",
   "defaultModel": "glm-5.2",
   "packages": [
@@ -14,15 +14,20 @@
     "npm:@aliou/pi-guardrails",
     "npm:pi-markdown-preview",
     "npm:@heyhuynhgiabuu/pi-diff",
+    "npm:@pi-lab/env",
+    "npm:pi-multimodal-proxy",
+    {
+      "source": "git:github.com/jalaxy33/pi-tasks",
+      "extensions": [
+        "+src/index.ts"
+      ]
+    },
     {
       "source": "npm:@tintinweb/pi-tasks",
       "extensions": [
         "-src/index.ts"
       ]
-    },
-    "npm:@pi-lab/env",
-    "npm:pi-multimodal-proxy",
-    "git:github.com/jalaxy33/pi-tasks"
+    }
   ],
   "defaultThinkingLevel": "high",
   "theme": "dark",
