@@ -1,7 +1,7 @@
 {
-  "lastChangelogVersion": "0.81.1",
-  "defaultProvider": "wd-CPAMP",
-  "defaultModel": "glm-5.2",
+  "lastChangelogVersion": "0.83.0",
+  "defaultProvider": "deepseek",
+  "defaultModel": "deepseek-v4-flash",
   "packages": [
     "npm:pi-mcp-adapter",
     "npm:pi-web-access",
