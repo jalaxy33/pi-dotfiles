@@ -5,8 +5,6 @@
   "packages": [
     "npm:pi-mcp-adapter",
     "npm:pi-web-access",
-    "npm:pi-cache-optimizer",
-    "npm:pi-observational-memory",
     "npm:pi-rtk-optimizer",
     "npm:@ff-labs/pi-fff",
     "npm:@vndv/pi-codegraph",
@@ -16,18 +14,9 @@
     "npm:@heyhuynhgiabuu/pi-diff",
     "npm:@pi-lab/env",
     "npm:pi-multimodal-proxy",
-    {
-      "source": "git:github.com/jalaxy33/pi-tasks",
-      "extensions": [
-        "+src/index.ts"
-      ]
-    },
-    {
-      "source": "npm:@tintinweb/pi-tasks",
-      "extensions": [
-        "-src/index.ts"
-      ]
-    }
+    "git:github.com/jalaxy33/pi-tasks",
+    "npm:pi-blackhole",
+    "npm:pi-cache-optimizer"
   ],
   "defaultThinkingLevel": "high",
   "theme": "dark",
