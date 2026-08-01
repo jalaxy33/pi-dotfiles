@@ -73,7 +73,7 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 | Extension | Description |
 | -- | -- |
 | [pi-subagents](https://github.com/tintinweb/pi-subagents) | Claude Code-style autonomous sub-agents with parallel execution |
-| [pi-observational-memory](https://github.com/elpapi42/pi-observational-memory) | Session-long memory across compactions and handoffs |
+| [pi-blackhole](https://github.com/k0valik/pi-blackhole) | Unified algorithmic compaction + observational memory — deterministic zero-cost compaction with durable observations/reflections surviving compactions (merges [pi-vcc](https://github.com/sting8k/pi-vcc) + [pi-observational-memory](https://github.com/elpapi42/pi-observational-memory)) |
 | [pi-tasks](https://github.com/tintinweb/pi-tasks) | Claude Code-style task tracking with dependency management and coordination |
 
 ### Context & Efficiency
