@@ -45,6 +45,7 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 - **Plan mode** — no need to lock agent in read-only. Write plans to files, execute with the task and subagent extension
 - **Goal mode** — not useful enough
 - **Background bash** — barely used
+- **pi-mcp-adapter** — MCP server integration kept installed but disabled; not needed for my current workflow. Re-enable anytime by dropping the negative filters in `agent/settings.json`.
 
 ## Extension list
 
@@ -52,9 +53,11 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 
 | Extension | Description |
 | -- | -- |
-| [pi-mcp-adapter](https://github.com/nicobailon/pi-mcp-adapter) | MCP server integration for Pi |
+| [pi-mcp-adapter](https://github.com/nicobailon/pi-mcp-adapter) | MCP server integration for Pi — ⚠ installed but disabled |
 | [pi-web-access](https://github.com/nicobailon/pi-web-access) | Web search, content extraction, video understanding |
 | [pi-markdown-preview](https://github.com/omaclaren/pi-markdown-preview) | Render Markdown/LaTeX to PDF, HTML, or PNG (requires: [pandoc](https://pandoc.org/installing.html), any Chromium-based browser, [mermaid-cli](https://github.com/mermaid-js/mermaid-cli)) |
+
+> **Note:** `pi-mcp-adapter` is installed but deliberately disabled — its extension and skill are filtered out in `agent/settings.json` (see *Deliberately Unused*). Re-enable by removing the negative filters.
 
 ### Vision & Media
 
