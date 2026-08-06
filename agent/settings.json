@@ -3,7 +3,6 @@
   "defaultProvider": "deepseek",
   "defaultModel": "deepseek-v4-flash",
   "packages": [
-    "npm:pi-mcp-adapter",
     "npm:pi-web-access",
     "npm:pi-rtk-optimizer",
     "npm:@ff-labs/pi-fff",
@@ -16,7 +15,16 @@
     "npm:pi-multimodal-proxy",
     "git:github.com/jalaxy33/pi-tasks",
     "npm:pi-blackhole",
-    "npm:pi-cache-optimizer"
+    "npm:pi-cache-optimizer",
+    {
+      "source": "npm:pi-mcp-adapter",
+      "extensions": [
+        "-index.ts"
+      ],
+      "skills": [
+        "-skills/mcp-scripting/SKILL.md"
+      ]
+    }
   ],
   "defaultThinkingLevel": "high",
   "theme": "dark",

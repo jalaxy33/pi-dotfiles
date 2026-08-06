@@ -1,5 +1,5 @@
 {
-  "maxConcurrent": 4,
+  "maxConcurrent": 5,
   "defaultMaxTurns": 0,
   "graceTurns": 5,
   "defaultJoinMode": "smart",
