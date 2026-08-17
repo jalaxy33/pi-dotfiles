@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.83.0",
+  "lastChangelogVersion": "0.84.1",
   "defaultProvider": "deepseek",
   "defaultModel": "deepseek-v4-flash",
   "packages": [
@@ -10,10 +10,8 @@
     "npm:@tintinweb/pi-subagents",
     "npm:@aliou/pi-guardrails",
     "npm:pi-markdown-preview",
-    "npm:@heyhuynhgiabuu/pi-diff",
     "npm:@pi-lab/env",
     "npm:pi-multimodal-proxy",
-    "git:github.com/jalaxy33/pi-tasks",
     "npm:pi-blackhole",
     "npm:pi-cache-optimizer",
     {
@@ -24,7 +22,9 @@
       "skills": [
         "-skills/mcp-scripting/SKILL.md"
       ]
-    }
+    },
+    "npm:@heyhuynhgiabuu/pi-diff",
+    "npm:@tintinweb/pi-tasks"
   ],
   "defaultThinkingLevel": "high",
   "theme": "dark",
