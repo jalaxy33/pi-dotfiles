@@ -1,11 +1,10 @@
 {
-  "lastChangelogVersion": "0.84.1",
+  "lastChangelogVersion": "0.84.2",
   "defaultProvider": "deepseek",
   "defaultModel": "deepseek-v4-flash",
   "packages": [
     "npm:pi-web-access",
     "npm:pi-rtk-optimizer",
-    "npm:@ff-labs/pi-fff",
     "npm:@vndv/pi-codegraph",
     "npm:@tintinweb/pi-subagents",
     "npm:@aliou/pi-guardrails",
@@ -24,9 +23,11 @@
       ]
     },
     "npm:@heyhuynhgiabuu/pi-diff",
-    "npm:@tintinweb/pi-tasks"
+    "npm:@tintinweb/pi-tasks",
+    "npm:@quintinshaw/pi-dynamic-workflows",
+    "npm:@ff-labs/pi-fff"
   ],
-  "defaultThinkingLevel": "high",
+  "defaultThinkingLevel": "xhigh",
   "theme": "dark",
   "hideThinkingBlock": false,
   "observational-memory": {

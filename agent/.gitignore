@@ -3,6 +3,7 @@
 /sessions
 /logs
 /skills
+/fff
 
 .env
 models-store.json
@@ -11,3 +12,5 @@ pi-cache-*.json
 mcp-cache.json
 mcp-npx-cache.json
 mcp-onboarding.json
+
+**/*.tmp
