@@ -4,6 +4,7 @@
 /logs
 /skills
 /fff
+/pi-cache-optimizer-stats.d
 
 .env
 models-store.json

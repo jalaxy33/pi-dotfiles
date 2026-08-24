@@ -1,7 +1,7 @@
 {
   "lastChangelogVersion": "0.84.2",
   "defaultProvider": "deepseek",
-  "defaultModel": "deepseek-v4-flash",
+  "defaultModel": "deepseek-v4-flash-vision-exp",
   "packages": [
     "npm:pi-web-access",
     "npm:pi-rtk-optimizer",
@@ -25,7 +25,7 @@
     "npm:@tintinweb/pi-tasks",
     "npm:@quintinshaw/pi-dynamic-workflows",
     "npm:@ff-labs/pi-fff",
-    "npm:pi-multimodal-proxy@1.15"
+    "npm:pi-multimodal-proxy"
   ],
   "defaultThinkingLevel": "high",
   "theme": "dark",
