@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.84.2",
+  "lastChangelogVersion": "0.84.3",
   "defaultProvider": "deepseek",
   "defaultModel": "deepseek-v4-flash-vision-exp",
   "packages": [
@@ -27,7 +27,7 @@
     "npm:@ff-labs/pi-fff",
     "npm:pi-multimodal-proxy"
   ],
-  "defaultThinkingLevel": "high",
+  "defaultThinkingLevel": "max",
   "theme": "dark",
   "hideThinkingBlock": false,
   "observational-memory": {
