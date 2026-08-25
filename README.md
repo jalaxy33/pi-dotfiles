@@ -16,6 +16,13 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
    git clone https://github.com/jalaxy33/pi-dotfiles ~/.pi
    ```
 
+    <details><summary>Easier clone for CN user</summary>
+
+    ```sh
+    git clone https://gh-proxy.org/https://github.com/jalaxy33/pi-dotfiles ~/.pi
+    ```
+    </details>
+
 3. (Optional) If you want to the same [skills I'm using](https://github.com/jalaxy33/skills-using):
  
     ```sh
@@ -84,7 +91,7 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 | Extension | Description |
 | -- | -- |
 | [pi-cache-optimizer](https://github.com/jiangge/pi-cache-optimizer) | Improve provider-side KV/prompt cache hit rates |
-| [pi-rtk-optimizer](https://github.com/MasuRii/pi-rtk-optimizer) | Filter and compress command output before it hits LLM context (requires: globally installed [rtk](https://github.com/rtk-ai/rtk) and [ripgrep](https://github.com/burntsushi/ripgrep)) |
+| [pi-rtk-optimizer](https://github.com/MasuRii/pi-rtk-optimizer) | Filter and compress command output before it hits LLM context (requires: globally-installed [rtk](https://github.com/rtk-ai/rtk) and [ripgrep](https://github.com/burntsushi/ripgrep)) |
 | [@pi-lab/env](https://github.com/pi-lab/pi-env) | Load env vars for pi from `settings.json` and `~/.pi/agent/.env` |
 
 ### Search & Navigation
