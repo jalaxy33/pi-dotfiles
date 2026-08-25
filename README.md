@@ -2,6 +2,10 @@
 
 Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 
+Requirements:
+- [ripgrep](https://github.com/burntsushi/ripgrep): better `grep` command, required for pi itself.
+
+
 ## Usage
 
 1. (Optional) Backup existing `.pi` config folder:
@@ -84,7 +88,7 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 | Extension | Description |
 | -- | -- |
 | [pi-cache-optimizer](https://github.com/jiangge/pi-cache-optimizer) | Improve provider-side KV/prompt cache hit rates |
-| [pi-rtk-optimizer](https://github.com/MasuRii/pi-rtk-optimizer) | Filter and compress command output before it hits LLM context |
+| [pi-rtk-optimizer](https://github.com/MasuRii/pi-rtk-optimizer) | Filter and compress command output before it hits LLM context (requires: globally installed [rtk](https://github.com/rtk-ai/rtk)) |
 | [@pi-lab/env](https://github.com/pi-lab/pi-env) | Load env vars for pi from `settings.json` and `~/.pi/agent/.env` |
 
 ### Search & Navigation
