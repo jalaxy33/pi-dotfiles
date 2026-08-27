@@ -53,6 +53,7 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 - **Goal mode** — not useful enough
 - **Background bash** — barely used
 - **pi-mcp-adapter** — MCP server integration kept installed but disabled; not needed for my current workflow. Re-enable anytime by dropping the negative filters in `agent/settings.json`.
+- **pi-multimodal-proxy** - Not necessary for most models I'm using support are multimodal.
 
 ## Extension list
 
@@ -64,13 +65,15 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 | [pi-web-access](https://github.com/nicobailon/pi-web-access) | Web search, content extraction, video understanding |
 | [pi-markdown-preview](https://github.com/omaclaren/pi-markdown-preview) | Render Markdown/LaTeX to PDF, HTML, or PNG (requires: [pandoc](https://pandoc.org/installing.html), any Chromium-based browser, [mermaid-cli](https://github.com/mermaid-js/mermaid-cli)) |
 
-> **Note:** `pi-mcp-adapter` is installed but deliberately disabled — its extension and skill are filtered out in `agent/settings.json` (see *Deliberately Unused*). Re-enable by removing the negative filters.
+> **Note:** `pi-mcp-adapter` is installed but deliberately disabled. Re-enable by removing the negative filters.
 
 ### Vision & Media
 
 | Extension | Description |
 | -- | -- |
 | [pi-multimodal-proxy](https://github.com/pungggi/pi-multimodal-proxy) | Let non-vision models understand images via a vision model |
+
+> **Note:** `pi-multimodal-proxy` is installed but deliberately disabled. Re-enable by removing the negative filters.
 
 ### Safety
 
@@ -92,7 +95,6 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 | -- | -- |
 | [pi-cache-optimizer](https://github.com/jiangge/pi-cache-optimizer) | Improve provider-side KV/prompt cache hit rates |
 | [pi-rtk-optimizer](https://github.com/MasuRii/pi-rtk-optimizer) | Filter and compress command output before it hits LLM context (requires: globally-installed [rtk](https://github.com/rtk-ai/rtk) and [ripgrep](https://github.com/burntsushi/ripgrep)) |
-| [@pi-lab/env](https://github.com/pi-lab/pi-env) | Load env vars for pi from `settings.json` and `~/.pi/agent/.env` |
 
 ### Search & Navigation
 
