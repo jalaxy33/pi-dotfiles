@@ -10,39 +10,49 @@
       "compat": {
         "supportsLongCacheRetention": true,
         "sendSessionAffinityHeaders": true
+      }
+    },
+    "zai": {
+      "apiKey": "$ZAI_API_KEY",
+      "compat": {
+        "sendSessionAffinityHeaders": true
       },
       "models": [
         {
-          "id": "deepseek-v4-flash-vision-exp",
-          "name": "DeepSeek V4 Flash Vision Exp",
+          "id": "glm-5.3-flash",
+          "name": "GLM-5.3-Flash",
           "reasoning": true,
-          "input": ["text", "image"],
-          "cost": {
-            "input": 0.14,
-            "output": 0.28,
-            "cacheRead": 0.0028,
-            "cacheWrite": 0
-          },
-          "contextWindow": 1000000,
-          "maxTokens": 384000,
-          "compat": {
-            "supportsStore": false,
-            "supportsDeveloperRole": false,
-            "maxTokensField": "max_tokens",
-            "requiresReasoningContentOnAssistantMessages": true,
-            "thinkingFormat": "deepseek"
-          },
           "thinkingLevelMap": {
+            "off": null,
             "minimal": null,
             "low": "low",
             "medium": null,
             "high": "high",
+            "xhigh": null,
             "max": "max"
+          },
+          "input": ["text", "image"],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "compat": {
+            "supportsStore": false,
+            "supportsDeveloperRole": false,
+            "supportsReasoningEffort": true,
+            "maxTokensField": "max_tokens",
+            "thinkingFormat": "zai",
+            "zaiToolStream": true,
+            "sendSessionAffinityHeaders": true
           }
         }
       ]
     },
-    "zai": {
+    "zai-coding-cn": {
       "apiKey": "$ZAI_API_KEY",
       "compat": {
         "sendSessionAffinityHeaders": true

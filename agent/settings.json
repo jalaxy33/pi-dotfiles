@@ -9,7 +9,6 @@
     "npm:@tintinweb/pi-subagents",
     "npm:@aliou/pi-guardrails",
     "npm:pi-markdown-preview",
-    "npm:@pi-lab/env",
     "npm:pi-blackhole",
     "npm:pi-cache-optimizer",
     {
@@ -23,9 +22,23 @@
     },
     "npm:@heyhuynhgiabuu/pi-diff",
     "npm:@tintinweb/pi-tasks",
-    "npm:@quintinshaw/pi-dynamic-workflows",
+    {
+      "source": "npm:@quintinshaw/pi-dynamic-workflows",
+      "extensions": [
+        "-extensions/workflow.ts"
+      ],
+      "skills": [
+        "-skills/workflow-authoring/SKILL.md",
+        "-skills/workflow-patterns/SKILL.md"
+      ]
+    },
     "npm:@ff-labs/pi-fff",
-    "npm:pi-multimodal-proxy"
+    {
+      "source": "npm:pi-multimodal-proxy",
+      "extensions": [
+        "-extensions/vision-proxy.ts"
+      ]
+    }
   ],
   "defaultThinkingLevel": "max",
   "theme": "dark",

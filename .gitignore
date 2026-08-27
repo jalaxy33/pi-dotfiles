@@ -1,6 +1,7 @@
 /cache
 /.pi
 /tasks
+/web-search-cache
 
 .env
 agent/pi-blackhole/*
