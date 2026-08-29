@@ -73,8 +73,6 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 | -- | -- |
 | [pi-multimodal-proxy](https://github.com/pungggi/pi-multimodal-proxy) | Let non-vision models understand images via a vision model |
 
-> **Note:** `pi-multimodal-proxy` is installed but deliberately disabled. Re-enable by removing the negative filters.
-
 ### Safety
 
 | Extension | Description |
