@@ -33,12 +33,7 @@
       ]
     },
     "npm:@ff-labs/pi-fff",
-    {
-      "source": "npm:pi-multimodal-proxy",
-      "extensions": [
-        "-extensions/vision-proxy.ts"
-      ]
-    }
+    "npm:pi-multimodal-proxy"
   ],
   "defaultThinkingLevel": "max",
   "theme": "dark",
