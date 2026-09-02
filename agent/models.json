@@ -16,44 +16,15 @@
       "apiKey": "$ZAI_API_KEY",
       "compat": {
         "sendSessionAffinityHeaders": true
-      },
-      "models": [
-        {
-          "id": "glm-5.3-flash",
-          "name": "GLM-5.3-Flash",
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "off": null,
-            "minimal": null,
-            "low": "low",
-            "medium": null,
-            "high": "high",
-            "xhigh": null,
-            "max": "max"
-          },
-          "input": ["text", "image"],
-          "cost": {
-            "input": 0,
-            "output": 0,
-            "cacheRead": 0,
-            "cacheWrite": 0
-          },
-          "contextWindow": 1000000,
-          "maxTokens": 131072,
-          "compat": {
-            "supportsStore": false,
-            "supportsDeveloperRole": false,
-            "supportsReasoningEffort": true,
-            "maxTokensField": "max_tokens",
-            "thinkingFormat": "zai",
-            "zaiToolStream": true,
-            "sendSessionAffinityHeaders": true
-          }
-        }
-      ]
+      }
     },
     "zai-coding-cn": {
       "apiKey": "$ZAI_API_KEY",
+      "compat": {
+        "sendSessionAffinityHeaders": true
+      }
+    },
+    "qwen-token-plan": {
       "compat": {
         "sendSessionAffinityHeaders": true
       }
@@ -69,8 +40,8 @@
       "apiKey": "$ARK_API_KEY",
       "models": [
         {
-          "id": "glm-latest",
-          "name": "glm-latest",
+          "id": "glm-5.3",
+          "name": "glm-5.3",
           "reasoning": true,
           "input": ["text"],
           "cost": {
@@ -85,6 +56,38 @@
             "supportsStore": false,
             "supportsDeveloperRole": false,
             "supportsReasoningEffort": true,
+            "thinkingFormat": "zai",
+            "zaiToolStream": true,
+            "sendSessionAffinityHeaders": true
+          }
+        },
+        {
+          "id": "glm-5.3-flash",
+          "name": "GLM-5.3-Flash",
+          "reasoning": true,
+          "input": ["text", "image"],
+          "thinkingLevelMap": {
+            "off": null,
+            "minimal": null,
+            "low": "low",
+            "medium": null,
+            "high": "high",
+            "xhigh": null,
+            "max": "max"
+          },
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "cost": {
+            "input": 0.075,
+            "output": 0.25,
+            "cacheRead": 0.015,
+            "cacheWrite": 0
+          },
+          "compat": {
+            "supportsStore": false,
+            "supportsDeveloperRole": false,
+            "supportsReasoningEffort": true,
+            "maxTokensField": "max_tokens",
             "thinkingFormat": "zai",
             "zaiToolStream": true,
             "sendSessionAffinityHeaders": true
@@ -114,6 +117,38 @@
             "supportsStore": false,
             "supportsDeveloperRole": false,
             "supportsReasoningEffort": true,
+            "thinkingFormat": "zai",
+            "zaiToolStream": true,
+            "sendSessionAffinityHeaders": true
+          }
+        },
+        {
+          "id": "glm-5.3-flash",
+          "name": "GLM-5.3-Flash",
+          "reasoning": true,
+          "input": ["text", "image"],
+          "thinkingLevelMap": {
+            "off": null,
+            "minimal": null,
+            "low": "low",
+            "medium": null,
+            "high": "high",
+            "xhigh": null,
+            "max": "max"
+          },
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "cost": {
+            "input": 0.075,
+            "output": 0.25,
+            "cacheRead": 0.015,
+            "cacheWrite": 0
+          },
+          "compat": {
+            "supportsStore": false,
+            "supportsDeveloperRole": false,
+            "supportsReasoningEffort": true,
+            "maxTokensField": "max_tokens",
             "thinkingFormat": "zai",
             "zaiToolStream": true,
             "sendSessionAffinityHeaders": true
