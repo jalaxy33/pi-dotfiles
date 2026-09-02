@@ -53,9 +53,11 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 - **Goal mode** — not useful enough
 - **Background bash** — barely used
 
-Installed but disabled:
+#### Installed but disabled
 
-- **pi-mcp-adapter** — MCP server integration kept installed but disabled; not needed for my current workflow. Re-enable anytime by dropping the negative filters in `agent/settings.json`.
+Re-enable any of them anytime by running `pi config` or dropping the negative filters in `agent/settings.json`.
+
+- **pi-mcp-adapter** — MCP server integration kept installed but disabled; not needed for my current workflow.
 
 ## Extension list
 
@@ -69,7 +71,7 @@ Installed but disabled:
 | [pi-subagents](https://github.com/tintinweb/pi-subagents) | Claude Code-style autonomous sub-agents with parallel execution |
 | [pi-tasks](https://github.com/tintinweb/pi-tasks) | Claude Code-style task tracking with dependency management and coordination |
 
-> **Note:** `pi-mcp-adapter` is installed but deliberately disabled. Re-enable by removing the negative filters.
+> **Note:** `pi-mcp-adapter` is installed but deliberately disabled.
 
 ### Safety
 
