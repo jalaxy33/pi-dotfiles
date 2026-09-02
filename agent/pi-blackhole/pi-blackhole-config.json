@@ -20,6 +20,6 @@
   "debugLog": false,
   "model": {
     "provider": "deepseek",
-    "id": "deepseek-v4-flash"
+    "id": "deepseek-v4-flash-vision-exp"
   }
 }

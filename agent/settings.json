@@ -23,12 +23,7 @@
     "npm:@heyhuynhgiabuu/pi-diff",
     "npm:@tintinweb/pi-tasks",
     "npm:@ff-labs/pi-fff",
-    {
-      "source": "npm:pi-multimodal-proxy",
-      "extensions": [
-        "+extensions/vision-proxy.ts"
-      ]
-    }
+    "npm:pi-multimodal-proxy"
   ],
   "defaultThinkingLevel": "max",
   "theme": "dark",
@@ -37,7 +32,7 @@
     "compactAfterTokensMode": "ratio",
     "model": {
       "provider": "deepseek",
-      "id": "deepseek-v4-flash",
+      "id": "deepseek-v4-flash-vision-exp",
       "thinking": "low"
     }
   }
