@@ -18,26 +18,26 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 
     <details><summary>Easier clone for CN user</summary>
 
-    ```sh
-    git clone https://gh-proxy.org/https://github.com/jalaxy33/pi-dotfiles ~/.pi
-    ```
+   ```sh
+   git clone https://gh-proxy.org/https://github.com/jalaxy33/pi-dotfiles ~/.pi
+   ```
+
     </details>
 
 3. (Optional) If you want to the same [skills I'm using](https://github.com/jalaxy33/skills-using):
- 
-    ```sh
-    # (optional) backup ~/.agents
-    mv ~/.agents ~/.agents-bak
 
-    # clone skills repo
-    git clone https://github.com/jalaxy33/skills-using ~/.agents
+   ```sh
+   # (optional) backup ~/.agents
+   mv ~/.agents ~/.agents-bak
 
-    # update skills to latest
-    npx skills update -g
-    ```
+   # clone skills repo
+   git clone https://github.com/jalaxy33/skills-using ~/.agents
 
-    pi will load skills from `~/.agents/skills/` automatically.
+   # update skills to latest
+   npx skills update -g
+   ```
 
+   pi will load skills from `~/.agents/skills/` automatically.
 
 ## Design Philosophy
 
@@ -52,52 +52,60 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 - **Plan mode** — no need to lock agent in read-only. Write plans to files, execute with the task and subagent extension
 - **Goal mode** — not useful enough
 - **Background bash** — barely used
+
+Installed but disabled:
+
 - **pi-mcp-adapter** — MCP server integration kept installed but disabled; not needed for my current workflow. Re-enable anytime by dropping the negative filters in `agent/settings.json`.
-- **pi-multimodal-proxy** - Not necessary for most models I'm using support are multimodal.
 
 ## Extension list
 
 ### Core
 
+<!-- prettier-ignore -->
 | Extension | Description |
 | -- | -- |
-| [pi-mcp-adapter](https://github.com/nicobailon/pi-mcp-adapter) | MCP server integration for Pi — ⚠ installed but disabled |
+| [pi-mcp-adapter](https://github.com/nicobailon/pi-mcp-adapter) | MCP server integration for Pi — (*⚠ installed but disabled*) |
 | [pi-web-access](https://github.com/nicobailon/pi-web-access) | Web search, content extraction, video understanding |
-| [pi-markdown-preview](https://github.com/omaclaren/pi-markdown-preview) | Render Markdown/LaTeX to PDF, HTML, or PNG (requires: [pandoc](https://pandoc.org/installing.html), any Chromium-based browser, [mermaid-cli](https://github.com/mermaid-js/mermaid-cli)) |
+| [pi-subagents](https://github.com/tintinweb/pi-subagents) | Claude Code-style autonomous sub-agents with parallel execution |
+| [pi-tasks](https://github.com/tintinweb/pi-tasks) | Claude Code-style task tracking with dependency management and coordination |
 
 > **Note:** `pi-mcp-adapter` is installed but deliberately disabled. Re-enable by removing the negative filters.
 
-### Vision & Media
-
-| Extension | Description |
-| -- | -- |
-| [pi-multimodal-proxy](https://github.com/pungggi/pi-multimodal-proxy) | Let non-vision models understand images via a vision model |
-
 ### Safety
 
+<!-- prettier-ignore -->
 | Extension | Description |
 | -- | -- |
 | [pi-guardrails](https://github.com/aliou/pi-guardrails) | Permission gates for dangerous operations (git push, rm, etc.) |
 
-### Subagent & Memory
+### Multimodal
 
+<!-- prettier-ignore -->
 | Extension | Description |
 | -- | -- |
-| [pi-subagents](https://github.com/tintinweb/pi-subagents) | Claude Code-style autonomous sub-agents with parallel execution |
-| [pi-blackhole](https://github.com/k0valik/pi-blackhole) | Unified algorithmic compaction + observational memory — deterministic zero-cost compaction with durable observations/reflections surviving compactions (merges [pi-vcc](https://github.com/sting8k/pi-vcc) + [pi-observational-memory](https://github.com/elpapi42/pi-observational-memory)) |
-| [pi-tasks](https://github.com/tintinweb/pi-tasks) | Claude Code-style task tracking with dependency management and coordination |
+| [pi-multimodal-proxy](https://github.com/pungggi/pi-multimodal-proxy) | Let non-vision models understand images via a vision model |
 
-### Context & Efficiency
+### Context
 
+<!-- prettier-ignore -->
 | Extension | Description |
 | -- | -- |
 | [pi-cache-optimizer](https://github.com/jiangge/pi-cache-optimizer) | Improve provider-side KV/prompt cache hit rates |
 | [pi-rtk-optimizer](https://github.com/MasuRii/pi-rtk-optimizer) | Filter and compress command output before it hits LLM context (requires: globally-installed [rtk](https://github.com/rtk-ai/rtk) and [ripgrep](https://github.com/burntsushi/ripgrep)) |
+| [pi-blackhole](https://github.com/k0valik/pi-blackhole) | Unified algorithmic compaction + observational memory — deterministic zero-cost compaction with durable observations/reflections surviving compactions (merges [pi-vcc](https://github.com/sting8k/pi-vcc) + [pi-observational-memory](https://github.com/elpapi42/pi-observational-memory)) |
 
-### Search & Navigation
+### Code Analysis
 
+<!-- prettier-ignore -->
 | Extension | Description |
 | -- | -- |
 | [pi-fff](https://github.com/dmtrKovalenko/fff) | Fuzzy file finding & indexed content grep via FFF engine |
 | [pi-codegraph](https://github.com/vndv/pi-codegraph) | Symbol-level code navigation: callers, callees, impact analysis (requires: globally-installed [codegraph](https://github.com/colbymchenry/codegraph)) |
+
+### UI
+
+<!-- prettier-ignore -->
+| Extension | Description |
+| -- | -- |
+| [pi-markdown-preview](https://github.com/omaclaren/pi-markdown-preview) | Render Markdown/LaTeX to PDF, HTML, or PNG (requires: [pandoc](https://pandoc.org/installing.html), any Chromium-based browser, [mermaid-cli](https://github.com/mermaid-js/mermaid-cli)) |
 | [pi-diff](https://github.com/heyhuynhgiabuu/pi-diff) | Syntax-highlighted git diff rendering (split & unified views) |

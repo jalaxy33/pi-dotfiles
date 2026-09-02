@@ -62,8 +62,5 @@
   "retryMax": 2,
   "maxUploadDim": 2048,
   "maxUploadBytes": 5242880,
-  "modelExplicit": true,
-  "allowedProviders": [
-    "opencode-go"
-  ]
+  "modelExplicit": true
 }

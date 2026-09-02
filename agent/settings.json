@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.84.3",
+  "lastChangelogVersion": "0.84.4",
   "defaultProvider": "deepseek",
   "defaultModel": "deepseek-v4-flash-vision-exp",
   "packages": [
@@ -22,18 +22,13 @@
     },
     "npm:@heyhuynhgiabuu/pi-diff",
     "npm:@tintinweb/pi-tasks",
-    {
-      "source": "npm:@quintinshaw/pi-dynamic-workflows",
-      "extensions": [
-        "-extensions/workflow.ts"
-      ],
-      "skills": [
-        "-skills/workflow-authoring/SKILL.md",
-        "-skills/workflow-patterns/SKILL.md"
-      ]
-    },
     "npm:@ff-labs/pi-fff",
-    "npm:pi-multimodal-proxy"
+    {
+      "source": "npm:pi-multimodal-proxy",
+      "extensions": [
+        "+extensions/vision-proxy.ts"
+      ]
+    }
   ],
   "defaultThinkingLevel": "max",
   "theme": "dark",
