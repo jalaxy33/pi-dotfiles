@@ -93,7 +93,6 @@ Re-enable any of them anytime by running `pi config` or dropping the negative fi
 | Extension | Description |
 | -- | -- |
 | [pi-cache-optimizer](https://github.com/jiangge/pi-cache-optimizer) | Improve provider-side KV/prompt cache hit rates |
-| [pi-rtk-optimizer](https://github.com/MasuRii/pi-rtk-optimizer) | Filter and compress command output before it hits LLM context (requires: globally-installed [rtk](https://github.com/rtk-ai/rtk) and [ripgrep](https://github.com/burntsushi/ripgrep)) |
 | [pi-blackhole](https://github.com/k0valik/pi-blackhole) | Unified algorithmic compaction + observational memory — deterministic zero-cost compaction with durable observations/reflections surviving compactions (merges [pi-vcc](https://github.com/sting8k/pi-vcc) + [pi-observational-memory](https://github.com/elpapi42/pi-observational-memory)) |
 
 ### Code Analysis
