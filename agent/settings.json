@@ -1,7 +1,7 @@
 {
-  "lastChangelogVersion": "0.84.4",
+  "lastChangelogVersion": "0.85.1",
   "defaultProvider": "deepseek",
-  "defaultModel": "deepseek-v4-flash-vision-exp",
+  "defaultModel": "deepseek-flash",
   "packages": [
     "npm:pi-web-access",
     "npm:@vndv/pi-codegraph",
@@ -31,7 +31,7 @@
     "compactAfterTokensMode": "ratio",
     "model": {
       "provider": "deepseek",
-      "id": "deepseek-v4-flash-vision-exp",
+      "id": "deepseek-flash",
       "thinking": "low"
     }
   }
