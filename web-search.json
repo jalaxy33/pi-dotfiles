@@ -1,5 +1,5 @@
 {
-  "workflow": "none",
-  "summaryModel": "deepseek/deepseek-v4-flash-vision-exp",
+  "workflow": "auto-summary",
+  "summaryModel": "deepseek/deepseek-flash",
   "provider": "anysearch"
 }
