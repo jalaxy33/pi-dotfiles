@@ -70,6 +70,7 @@ Re-enable any of them anytime by running `pi config` or dropping the negative fi
 | [pi-web-access](https://github.com/nicobailon/pi-web-access) | Web search, content extraction, video understanding |
 | [pi-subagents](https://github.com/tintinweb/pi-subagents) | Claude Code-style autonomous sub-agents with parallel execution |
 | [pi-tasks](https://github.com/tintinweb/pi-tasks) | Claude Code-style task tracking with dependency management and coordination |
+| [pi-intercom](https://github.com/nicobailon/pi-intercom) | Session-to-session messaging between local pi sessions |
 
 > **Note:** `pi-mcp-adapter` is installed but deliberately disabled.
 
