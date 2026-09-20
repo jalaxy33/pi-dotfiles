@@ -24,7 +24,7 @@
     "npm:@ff-labs/pi-fff",
     "npm:pi-multimodal-proxy"
   ],
-  "defaultThinkingLevel": "max",
+  "defaultThinkingLevel": "high",
   "theme": "dark",
   "hideThinkingBlock": false,
   "observational-memory": {
