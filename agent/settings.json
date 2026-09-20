@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.85.1",
+  "lastChangelogVersion": "0.86.0",
   "defaultProvider": "deepseek",
   "defaultModel": "deepseek-flash",
   "packages": [
@@ -22,7 +22,8 @@
     "npm:@heyhuynhgiabuu/pi-diff",
     "npm:@tintinweb/pi-tasks",
     "npm:@ff-labs/pi-fff",
-    "npm:pi-multimodal-proxy"
+    "npm:pi-multimodal-proxy",
+    "npm:pi-intercom"
   ],
   "defaultThinkingLevel": "high",
   "theme": "dark",

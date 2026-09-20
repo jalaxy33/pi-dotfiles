@@ -5,6 +5,7 @@
 /skills
 /fff
 /pi-cache-optimizer-stats.d
+/intercom
 
 .env
 models-store.json
@@ -13,5 +14,6 @@ pi-cache-*.json
 mcp-cache.json
 mcp-npx-cache.json
 mcp-onboarding.json
+trust.json
 
 **/*.tmp
