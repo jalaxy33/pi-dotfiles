@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.86.1",
+  "lastChangelogVersion": "0.87.1",
   "defaultProvider": "deepseek",
   "defaultModel": "deepseek-flash",
   "packages": [
@@ -26,14 +26,5 @@
     "npm:pi-intercom"
   ],
   "defaultThinkingLevel": "high",
-  "theme": "dark",
-  "hideThinkingBlock": false,
-  "observational-memory": {
-    "compactAfterTokensMode": "ratio",
-    "model": {
-      "provider": "deepseek",
-      "id": "deepseek-flash",
-      "thinking": "low"
-    }
-  }
+  "theme": "dark"
 }
