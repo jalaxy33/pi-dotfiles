@@ -1,12 +1,16 @@
 {
   "name": "pi-model-inherit",
   "version": "0.1.0",
-  "description": "Models inherit compat, headers, and other fields from a models.json default block, so you write them once instead of per provider.",
+  "description": "Models inherit from a models.json default block and from other models, so compat, headers, and model fields are written once instead of per provider.",
   "type": "module",
   "license": "Apache-2.0",
-  "keywords": ["pi-package"],
+  "keywords": [
+    "pi-package"
+  ],
   "pi": {
-    "extensions": ["./extensions/model-inherit.ts"]
+    "extensions": [
+      "./extensions/model-inherit/index.ts"
+    ]
   },
   "scripts": {
     "test": "node --experimental-strip-types --no-warnings --test tests/*.test.ts"
@@ -14,5 +18,10 @@
   "peerDependencies": {
     "@earendil-works/pi-coding-agent": "*"
   },
-  "files": ["extensions", "README.md", "LICENSE"]
+  "files": [
+    "extensions",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE"
+  ]
 }
