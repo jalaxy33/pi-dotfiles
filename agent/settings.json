@@ -3,6 +3,7 @@
   "defaultProvider": "deepseek",
   "defaultModel": "deepseek-flash",
   "packages": [
+    "./local-packages/pi-model-inherit",
     "npm:pi-web-access",
     "npm:@vndv/pi-codegraph",
     "npm:@tintinweb/pi-subagents",
