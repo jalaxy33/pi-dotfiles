@@ -2,8 +2,17 @@
   "name": "pi-model-inherit",
   "version": "0.1.0",
   "description": "Models inherit from a models.json default block and from other models, so compat, headers, and model fields are written once instead of per provider.",
+  "author": "jalaxy33",
   "type": "module",
   "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jalaxy33/pi-model-inherit.git"
+  },
+  "homepage": "https://github.com/jalaxy33/pi-model-inherit#readme",
+  "bugs": {
+    "url": "https://github.com/jalaxy33/pi-model-inherit/issues"
+  },
   "keywords": [
     "pi-package"
   ],
