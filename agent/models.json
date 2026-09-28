@@ -1,46 +1,30 @@
 {
-  "providers": {
-    "opencode-go": {
-      "compat": {
-        "sendSessionAffinityHeaders": true
+  "default": {
+    "providers": {
+      "*": {
+        "compat": {
+          "sendSessionAffinityHeaders": true
+        }
       }
-    },
+    }
+  },
+  "providers": {
     "deepseek": {
       "apiKey": "$DEEPSEEK_API_KEY",
       "compat": {
-        "supportsLongCacheRetention": true,
-        "sendSessionAffinityHeaders": true
+        "supportsLongCacheRetention": true
       }
     },
     "zai": {
-      "apiKey": "$ZAI_API_KEY",
-      "compat": {
-        "sendSessionAffinityHeaders": true
-      }
+      "apiKey": "$ZAI_API_KEY"
     },
     "zai-coding-cn": {
-      "apiKey": "$ZAI_API_KEY",
-      "compat": {
-        "sendSessionAffinityHeaders": true
-      }
-    },
-    "qwen-token-plan": {
-      "compat": {
-        "sendSessionAffinityHeaders": true
-      }
-    },
-    "qwen-token-plan-cn": {
-      "compat": {
-        "sendSessionAffinityHeaders": true
-      }
+      "apiKey": "$ZAI_API_KEY"
     },
     "ark": {
       "baseUrl": "https://ark.cn-beijing.volces.com/api/coding/v3",
       "api": "openai-completions",
       "apiKey": "$ARK_API_KEY",
-      "compat": {
-        "sendSessionAffinityHeaders": true
-      },
       "models": [
         {
           "id": "glm-5.3",
@@ -100,9 +84,6 @@
       "baseUrl": "http://113.31.117.191:8123/v1",
       "api": "openai-completions",
       "apiKey": "$WD_CPAMP_API_KEY",
-      "compat": {
-        "sendSessionAffinityHeaders": true
-      },
       "models": [
         {
           "id": "glm-5.3",
