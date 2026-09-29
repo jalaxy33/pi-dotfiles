@@ -3,8 +3,8 @@
   "defaultProvider": "deepseek",
   "defaultModel": "deepseek-flash",
   "packages": [
-    "./local-packages/pi-model-inherit",
-    "./local-packages/pi-private-models",
+    "git:github.com/jalaxy33/pi-model-inherit",
+    "git:github.com/jalaxy33/pi-private-models",
     "npm:pi-web-access",
     "npm:@tintinweb/pi-subagents",
     "npm:@aliou/pi-guardrails",
