@@ -4,6 +4,7 @@
   "defaultModel": "deepseek-flash",
   "packages": [
     "./local-packages/pi-model-inherit",
+    "./local-packages/pi-private-models",
     "npm:pi-web-access",
     "npm:@tintinweb/pi-subagents",
     "npm:@aliou/pi-guardrails",

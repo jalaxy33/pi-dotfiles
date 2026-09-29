@@ -35,25 +35,6 @@
           "inherit": "zai/glm-5.3-flash"
         }
       ]
-    },
-    "wd-CPAMP": {
-      "baseUrl": "http://113.31.117.191:8123/v1",
-      "api": "openai-completions",
-      "apiKey": "$WD_CPAMP_API_KEY",
-      "models": [
-        {
-          "id": "glm-5.3",
-          "inherit": "zai/glm-5.3"
-        },
-        {
-          "id": "glm-5.3-flash",
-          "inherit": "zai/glm-5.3-flash"
-        },
-        {
-          "id": "deepseek-v4.1-flash",
-          "inherit": "deepseek/deepseek-flash"
-        }
-      ]
     }
   }
 }
