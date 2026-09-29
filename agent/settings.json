@@ -5,7 +5,6 @@
   "packages": [
     "./local-packages/pi-model-inherit",
     "npm:pi-web-access",
-    "npm:@vndv/pi-codegraph",
     "npm:@tintinweb/pi-subagents",
     "npm:@aliou/pi-guardrails",
     "npm:pi-markdown-preview",
