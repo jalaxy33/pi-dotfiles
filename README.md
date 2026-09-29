@@ -102,7 +102,6 @@ Re-enable any of them anytime by running `pi config` or dropping the negative fi
 | Extension | Description |
 | -- | -- |
 | [pi-fff](https://github.com/dmtrKovalenko/fff) | Fuzzy file finding & indexed content grep via FFF engine |
-| [pi-codegraph](https://github.com/vndv/pi-codegraph) | Symbol-level code navigation: callers, callees, impact analysis (requires: globally-installed [codegraph](https://github.com/colbymchenry/codegraph)) |
 
 ### UI
 
