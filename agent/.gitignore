@@ -18,3 +18,5 @@ mcp-onboarding.json
 trust.json
 
 **/*.tmp
+/local-packages/pi-model-inherit
+/local-packages/pi-private-models
