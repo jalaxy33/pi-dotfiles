@@ -1,0 +1,16 @@
+{
+  "name": "pi-ext-manifest-fix",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Keeps installed extension manifests compliant with pi's host-package rule (host packages in peerDependencies with \"*\", not dependencies).",
+  "license": "MIT",
+  "pi": {
+    "extensions": [
+      "./extensions/manifest-fix/index.ts"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  }
+}

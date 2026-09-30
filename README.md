@@ -57,7 +57,6 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 
 Re-enable any of them anytime by running `pi config` or dropping the negative filters in `agent/settings.json`.
 
-- **pi-mcp-adapter** — MCP server integration kept installed but disabled; not needed for my current workflow.
 
 ## Extension list
 
@@ -66,7 +65,6 @@ Re-enable any of them anytime by running `pi config` or dropping the negative fi
 <!-- prettier-ignore -->
 | Extension | Description |
 | -- | -- |
-| [pi-mcp-adapter](https://github.com/nicobailon/pi-mcp-adapter) | MCP server integration for Pi — (*⚠ installed but disabled*) |
 | [pi-web-access](https://github.com/nicobailon/pi-web-access) | Web search, content extraction, video understanding |
 | [pi-subagents](https://github.com/tintinweb/pi-subagents) | Claude Code-style autonomous sub-agents with parallel execution |
 | [pi-tasks](https://github.com/tintinweb/pi-tasks) | Claude Code-style task tracking with dependency management and coordination |
