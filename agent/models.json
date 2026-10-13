@@ -10,10 +10,7 @@
   },
   "providers": {
     "deepseek": {
-      "apiKey": "$DEEPSEEK_API_KEY",
-      "compat": {
-        "supportsLongCacheRetention": true
-      }
+      "apiKey": "$DEEPSEEK_API_KEY"
     },
     "zai": {
       "apiKey": "$ZAI_API_KEY"
