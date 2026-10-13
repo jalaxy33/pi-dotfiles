@@ -1,7 +1,19 @@
 {
-  "lastChangelogVersion": "0.99.2",
+  "lastChangelogVersion": "1.2.0",
   "defaultProvider": "deepseek",
   "defaultModel": "deepseek-flash",
+  "defaultTools": [
+    "read",
+    "bash",
+    "edit",
+    "write",
+    "+grep",
+    "+find",
+    "+ls",
+    "+powershell",
+    "+codemode",
+    "+tool_search"
+  ],
   "packages": [
     "./local-packages/pi-ext-manifest-fix",
     "npm:pi-model-inherit",
@@ -10,14 +22,14 @@
     "npm:@tintinweb/pi-subagents",
     "npm:@aliou/pi-guardrails",
     "npm:pi-markdown-preview",
-    "npm:pi-blackhole",
-    "npm:pi-cache-optimizer",
     "npm:@heyhuynhgiabuu/pi-diff",
     "npm:@tintinweb/pi-tasks",
-    "npm:@ff-labs/pi-fff",
     "npm:pi-multimodal-proxy",
     "npm:pi-intercom"
   ],
   "defaultThinkingLevel": "high",
+  "showCacheMissNotices": true,
+  "collapseChangelog": true,
+  "npmCommand": ["bun"],
   "theme": "dark"
 }

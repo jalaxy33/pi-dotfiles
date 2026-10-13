@@ -57,7 +57,6 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 
 Re-enable any of them anytime by running `pi config` or dropping the negative filters in `agent/settings.json`.
 
-
 ## Extension list
 
 ### Core
@@ -69,8 +68,6 @@ Re-enable any of them anytime by running `pi config` or dropping the negative fi
 | [pi-subagents](https://github.com/tintinweb/pi-subagents) | Claude Code-style autonomous sub-agents with parallel execution |
 | [pi-tasks](https://github.com/tintinweb/pi-tasks) | Claude Code-style task tracking with dependency management and coordination |
 | [pi-intercom](https://github.com/nicobailon/pi-intercom) | Session-to-session messaging between local pi sessions |
-
-> **Note:** `pi-mcp-adapter` is installed but deliberately disabled.
 
 ### Safety
 
@@ -86,21 +83,6 @@ Re-enable any of them anytime by running `pi config` or dropping the negative fi
 | -- | -- |
 | [pi-multimodal-proxy](https://github.com/pungggi/pi-multimodal-proxy) | Let non-vision models understand images via a vision model |
 
-### Context
-
-<!-- prettier-ignore -->
-| Extension | Description |
-| -- | -- |
-| [pi-cache-optimizer](https://github.com/jiangge/pi-cache-optimizer) | Improve provider-side KV/prompt cache hit rates |
-| [pi-blackhole](https://github.com/k0valik/pi-blackhole) | Unified algorithmic compaction + observational memory — deterministic zero-cost compaction with durable observations/reflections surviving compactions (merges [pi-vcc](https://github.com/sting8k/pi-vcc) + [pi-observational-memory](https://github.com/elpapi42/pi-observational-memory)) |
-
-### Code Analysis
-
-<!-- prettier-ignore -->
-| Extension | Description |
-| -- | -- |
-| [pi-fff](https://github.com/dmtrKovalenko/fff) | Fuzzy file finding & indexed content grep via FFF engine |
-
 ### UI
 
 <!-- prettier-ignore -->
@@ -108,3 +90,11 @@ Re-enable any of them anytime by running `pi config` or dropping the negative fi
 | -- | -- |
 | [pi-markdown-preview](https://github.com/omaclaren/pi-markdown-preview) | Render Markdown/LaTeX to PDF, HTML, or PNG (requires: [pandoc](https://pandoc.org/installing.html), any Chromium-based browser, [mermaid-cli](https://github.com/mermaid-js/mermaid-cli)) |
 | [pi-diff](https://github.com/heyhuynhgiabuu/pi-diff) | Syntax-highlighted git diff rendering (split & unified views) |
+
+### Config Utils
+
+<!-- prettier-ignore -->
+| Extension | Description |
+| -- | -- |
+| [pi-model-inherit](https://github.com/jalaxy33/pi-model-inherit) | Simplify model customization by inheriting configs from existing models. |
+| [pi-private-models](https://github.com/jalaxy33/pi-private-models) | Hide private model configs from revealing to public. |

@@ -1,8 +1,0 @@
-{
-  "model": {
-    "provider": "deepseek",
-    "id": "deepseek-flash",
-    "cooldownHours": 0
-  },
-  "statusBar": false
-}
