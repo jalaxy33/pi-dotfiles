@@ -1,5 +1,15 @@
 {
-  "workflow": "auto-summary",
-  "summaryModel": "deepseek/deepseek-flash",
-  "provider": "anysearch"
+  "workflow": "none",
+  "searchRouting": {
+    "providers": ["tavily", "firecrawl", "anysearch", "degoog"],
+    "fallbackOn": [
+      "transient",
+      "quota",
+      "network",
+      "invalid-response",
+      "unsupported"
+    ]
+  },
+  "firecrawlBaseUrl": "https://api.firecrawl.dev",
+  "firecrawlApiKey": "$FIRECRAWL_API_KEY"
 }

@@ -7,12 +7,11 @@
     "bash",
     "edit",
     "write",
-    "+grep",
-    "+find",
-    "+ls",
-    "+powershell",
-    "+codemode",
-    "+tool_search"
+    "grep",
+    "find",
+    "ls",
+    "powershell",
+    "+codemode"
   ],
   "packages": [
     "./local-packages/pi-ext-manifest-fix",
@@ -28,8 +27,6 @@
     "npm:pi-intercom"
   ],
   "defaultThinkingLevel": "high",
-  "showCacheMissNotices": true,
-  "collapseChangelog": true,
   "npmCommand": ["bun"],
   "theme": "dark"
 }
