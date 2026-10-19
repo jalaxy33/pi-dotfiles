@@ -1,3 +1,5 @@
 {
-  "app.interrupt": ["escape", "ctrl+i"]
+  "app.interrupt": ["escape", "ctrl+i"],
+  "tui.altScreen.top": ["ctrl+home", "ctrl+alt+up"],
+  "tui.altScreen.bottom": ["ctrl+end", "ctrl+alt+down"]
 }
