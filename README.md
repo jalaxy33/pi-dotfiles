@@ -37,7 +37,7 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
    npx skills update -g
    ```
 
-   pi will load skills from `~/.agents/skills/` automatically.
+   Skills in `~/.agents/skills/` are not auto-loaded; use `pi --skill <path>` when needed.
 
 ## Design Philosophy
 
@@ -46,6 +46,7 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 - **Fit my workflow, not for everyone** — solve real needs, not chase universality
 - **Extend for what's missing** — sub-agents, tasks, vision — added via community extensions
 - **Restrained yet flexible safety** — guard only irreversible operations (git push, delete), no noisy prompts
+- **Avoid unnecessary global context** — `~/.agents/skills/` are not auto-loaded, passed in with `pi --skill` when a task needs them
 
 ### Deliberately Unused
 
