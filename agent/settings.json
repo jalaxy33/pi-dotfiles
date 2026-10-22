@@ -4,7 +4,6 @@
   "defaultModel": "deepseek-flash",
   "defaultTools": ["+grep", "+powershell", "+codemode"],
   "packages": [
-    "./local-packages/pi-ext-manifest-fix",
     "npm:pi-model-inherit",
     "npm:pi-private-models",
     "npm:pi-web-access",
