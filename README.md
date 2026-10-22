@@ -44,19 +44,20 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 ### Principles
 
 - **Fit my workflow, not for everyone** — solve real needs, not chase universality
-- **Extend for what's missing** — sub-agents, tasks, vision — added via community extensions
+- **Extend for what's missing** — sub-agents, vision — added via community extensions
 - **Restrained yet flexible safety** — guard only irreversible operations (git push, delete), no noisy prompts
 - **Avoid unnecessary global context** — `~/.agents/skills/` are not auto-loaded, passed in with `pi --skill` when a task needs them
 
 ### Deliberately Unused
 
-- **Plan mode** — no need to lock agent in read-only. Write plans to files, execute with the task and subagent extension
+- **Plan mode** — no need to lock agent in read-only. Write plans to files, execute with the subagent extension and workflows
 - **Goal mode** — not useful enough
 - **Background bash** — barely used
 
-#### Installed but disabled
-
-Re-enable any of them anytime by running `pi config` or dropping the negative filters in `agent/settings.json`.
+<!-- #### Installed but disabled -->
+<!---->
+<!-- Re-enable any of them anytime by running `pi config` or dropping the negative filters in `agent/settings.json`. -->
+<!---->
 
 ## Extension list
 
@@ -67,7 +68,6 @@ Re-enable any of them anytime by running `pi config` or dropping the negative fi
 | -- | -- |
 | [pi-web-access](https://github.com/nicobailon/pi-web-access) | Web search, content extraction, video understanding |
 | [pi-subagents](https://github.com/tintinweb/pi-subagents) | Claude Code-style autonomous sub-agents with parallel execution |
-| [pi-tasks](https://github.com/tintinweb/pi-tasks) | Claude Code-style task tracking with dependency management and coordination |
 | [pi-intercom](https://github.com/nicobailon/pi-intercom) | Session-to-session messaging between local pi sessions |
 
 ### Safety
