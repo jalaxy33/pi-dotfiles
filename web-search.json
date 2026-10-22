@@ -1,7 +1,7 @@
 {
   "workflow": "none",
   "searchRouting": {
-    "providers": ["tavily", "firecrawl", "anysearch", "degoog"],
+    "providers": ["firecrawl", "tavily", "deepseek"],
     "fallbackOn": [
       "transient",
       "quota",
@@ -11,5 +11,8 @@
     ]
   },
   "firecrawlBaseUrl": "https://api.firecrawl.dev",
-  "firecrawlApiKey": "$FIRECRAWL_API_KEY"
+  "firecrawlApiKey": "$FIRECRAWL_API_KEY",
+  "ssrf": {
+    "allowRanges": ["198.18.0.0/15"]
+  }
 }
