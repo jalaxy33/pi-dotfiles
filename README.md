@@ -63,7 +63,6 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 
 ### Core
 
-<!-- prettier-ignore -->
 | Extension | Description |
 | -- | -- |
 | [pi-web-access](https://github.com/nicobailon/pi-web-access) | Web search, content extraction, video understanding |
@@ -72,28 +71,24 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 
 ### Safety
 
-<!-- prettier-ignore -->
 | Extension | Description |
 | -- | -- |
 | [pi-guardrails](https://github.com/aliou/pi-guardrails) | Permission gates for dangerous operations (git push, rm, etc.) |
 
 ### Multimodal
 
-<!-- prettier-ignore -->
 | Extension | Description |
 | -- | -- |
 | [pi-multimodal-proxy](https://github.com/pungggi/pi-multimodal-proxy) | Let non-vision models understand images via a vision model |
 
 ### UI
 
-<!-- prettier-ignore -->
 | Extension | Description |
 | -- | -- |
 | [pi-markdown-preview](https://github.com/omaclaren/pi-markdown-preview) | Render Markdown/LaTeX to PDF, HTML, or PNG (requires: [pandoc](https://pandoc.org/installing.html), any Chromium-based browser, [mermaid-cli](https://github.com/mermaid-js/mermaid-cli)) |
 
 ### Config Utils
 
-<!-- prettier-ignore -->
 | Extension | Description |
 | -- | -- |
 | [pi-model-inherit](https://github.com/jalaxy33/pi-model-inherit) | Simplify model customization by inheriting configs from existing models. |
