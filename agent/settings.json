@@ -7,18 +7,17 @@
     "npm:pi-model-inherit",
     "npm:pi-private-models",
     "npm:pi-web-access",
-    "npm:@tintinweb/pi-subagents",
     "npm:@aliou/pi-guardrails",
     "npm:pi-markdown-preview",
     {
       "source": "npm:pi-multimodal-proxy",
       "extensions": ["-extensions/vision-proxy.ts"]
     },
-    "npm:pi-intercom"
+    "npm:pi-intercom",
+    "npm:@tintinweb/pi-subagents"
   ],
   "defaultThinkingLevel": "high",
   "skills": ["!~/.agents/skills/**"],
   "npmCommand": ["bun"],
   "theme": "dark"
 }
-
