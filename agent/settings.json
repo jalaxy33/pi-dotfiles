@@ -14,7 +14,7 @@
       "extensions": ["-extensions/vision-proxy.ts"]
     },
     "npm:pi-intercom",
-    "npm:@tintinweb/pi-subagents"
+    "./local-packages/pi-subagent-bootstrap"
   ],
   "defaultThinkingLevel": "high",
   "skills": ["!~/.agents/skills/**"],

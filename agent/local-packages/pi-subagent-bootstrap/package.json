@@ -1,0 +1,18 @@
+{
+  "name": "pi-subagent-bootstrap",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Install badlogic/pi-subagent from GitHub and expose its CLI",
+  "keywords": [
+    "pi-package"
+  ],
+  "pi": {
+    "extensions": [
+      "./extensions/pi-subagent-bootstrap/index.ts"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  }
+}

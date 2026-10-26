@@ -66,7 +66,7 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 | Extension | Description |
 | -- | -- |
 | [pi-web-access](https://github.com/nicobailon/pi-web-access) | Web search, content extraction, video understanding |
-| [pi-subagents](https://github.com/tintinweb/pi-subagents) | Claude Code-style autonomous sub-agents with parallel execution |
+| [pi-subagent](https://github.com/badlogic/pi-subagent) | Observable persistent subagents in tmux. Installed by local [pi-subagent-bootstrap](./agent/local-packages/pi-subagent-bootstrap/README.md) (requires: `git`, `tmux`, Node.js 22.19+) |
 | [pi-intercom](https://github.com/nicobailon/pi-intercom) | Session-to-session messaging between local pi sessions |
 
 ### Safety
