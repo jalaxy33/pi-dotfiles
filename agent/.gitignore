@@ -6,6 +6,7 @@
 /fff
 /pi-cache-optimizer-stats.d
 /intercom
+/pi-web-access
 
 .env
 models.private.json
