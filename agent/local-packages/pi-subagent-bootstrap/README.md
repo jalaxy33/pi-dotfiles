@@ -5,10 +5,10 @@ Installs [badlogic/pi-subagent](https://github.com/badlogic/pi-subagent) and kee
 The upstream project is not published to npm. This wrapper fills that gap:
 
 - On first load it clones the upstream repo into `vendor/pi-subagent` (gitignored).
-- It links `vendor/pi-subagent/subagent.ts` to `<pi agent dir>/bin/subagent`.
+- It writes `<pi agent dir>/bin/subagent`, a small launcher that runs `vendor/pi-subagent/subagent.ts` on pi's own runtime.
 - It loads the upstream extension, so `spawn`, `status`, `wait`, and the `/subagent` command work as usual.
 
-Requires `git`, `tmux`, and Node.js 22.19 or newer (same as upstream). Pi adds its `bin` directory to the shell `PATH`, so `subagent` works inside pi without shell configuration.
+Requires `git` and `tmux`. The launcher reuses the runtime pi itself runs on, so no separate runtime has to be installed for the CLI. Pi adds its `bin` directory to the shell `PATH`, so `subagent` works inside pi without shell configuration.
 
 ## Network
 
