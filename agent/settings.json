@@ -2,7 +2,11 @@
   "lastChangelogVersion": "1.4.0",
   "defaultProvider": "deepseek",
   "defaultModel": "deepseek-flash",
-  "defaultTools": ["+grep", "+find", "+codemode"],
+  "defaultTools": [
+    "+grep",
+    "+find",
+    "+codemode"
+  ],
   "packages": [
     "npm:pi-model-inherit",
     "npm:pi-private-models",
@@ -11,13 +15,20 @@
     "npm:pi-markdown-preview",
     {
       "source": "npm:pi-multimodal-proxy",
-      "extensions": ["-extensions/vision-proxy.ts"]
+      "extensions": [
+        "-extensions/vision-proxy.ts"
+      ]
     },
     "npm:pi-intercom",
-    "./local-packages/pi-subagent-bootstrap"
+    "./local-packages/pi-subagent-bootstrap",
+    "npm:pi-context-view"
   ],
   "defaultThinkingLevel": "high",
-  "skills": ["!~/.agents/skills/**"],
-  "npmCommand": ["bun"],
+  "skills": [
+    "!~/.agents/skills/**"
+  ],
+  "npmCommand": [
+    "bun"
+  ],
   "theme": "dark"
 }
