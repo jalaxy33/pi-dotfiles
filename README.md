@@ -24,7 +24,7 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 
     </details>
 
-3. (Optional) If you want to the same [skills I'm using](https://github.com/jalaxy33/skills-using):
+3. (Optional) If you want to use the same [skills I'm using](https://github.com/jalaxy33/skills-using):
 
    ```sh
    # (optional) backup ~/.agents
@@ -38,6 +38,14 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
    ```
 
    Skills in `~/.agents/skills/` are not auto-loaded; use `pi --skill <path>` when needed.
+
+## Requirements
+
+- [pi](https://pi.dev/)
+- [bun](https://bun.sh) — the package installer pi uses (`npmCommand` in `agent/settings.json`)
+- [node](https://nodejs.org/) 22.19+ — pi itself and `pi-subagent`
+- [tmux](https://github.com/tmux/tmux) — `pi-subagent`
+- [pandoc](https://pandoc.org/installing.html), any Chromium-based browser, [mermaid-cli](https://github.com/mermaid-js/mermaid-cli) — `pi-markdown-preview`
 
 ## Design Philosophy
 
@@ -54,11 +62,6 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 - **Goal mode** — not useful enough
 - **Background bash** — barely used
 
-<!-- #### Installed but disabled -->
-<!---->
-<!-- Re-enable any of them anytime by running `pi config` or dropping the negative filters in `agent/settings.json`. -->
-<!---->
-
 ## Extension list
 
 ### Core
@@ -66,7 +69,7 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 | Extension | Description |
 | -- | -- |
 | [pi-web-access](https://github.com/nicobailon/pi-web-access) | Web search, content extraction, video understanding |
-| [pi-subagent](https://github.com/badlogic/pi-subagent) | Observable persistent subagents in tmux. Installed by local [pi-subagent-bootstrap](./agent/local-packages/pi-subagent-bootstrap/README.md) (requires: `git`, `tmux`, Node.js 22.19+) |
+| [pi-subagent](https://github.com/badlogic/pi-subagent) | Observable persistent subagents in tmux. Installed by local [pi-subagent-bootstrap](./agent/local-packages/pi-subagent-bootstrap/README.md) (requires: [tmux](https://github.com/tmux/tmux), [node](https://nodejs.org/) 22.19+) |
 | [pi-intercom](https://github.com/nicobailon/pi-intercom) | Session-to-session messaging between local pi sessions |
 
 ### Safety
@@ -81,15 +84,21 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 | -- | -- |
 | [pi-multimodal-proxy](https://github.com/pungggi/pi-multimodal-proxy) | Let non-vision models understand images via a vision model |
 
+### Context
+
+| Extension | Description |
+| -- | -- |
+| [pi-context-view](https://github.com/dimk90/pi-context-view) | Show context usage map and inspect the hidden parts |
+
 ### UI
 
 | Extension | Description |
 | -- | -- |
-| [pi-markdown-preview](https://github.com/omaclaren/pi-markdown-preview) | Render Markdown/LaTeX to PDF, HTML, or PNG (requires: [pandoc](https://pandoc.org/installing.html), any Chromium-based browser, [mermaid-cli](https://github.com/mermaid-js/mermaid-cli)) |
+| [pi-markdown-preview](https://github.com/omaclaren/pi-markdown-preview) | Preview conversation output with richer rendering (requires: [pandoc](https://pandoc.org/installing.html), any Chromium-based browser, [mermaid-cli](https://github.com/mermaid-js/mermaid-cli)) |
 
 ### Config Utils
 
 | Extension | Description |
 | -- | -- |
-| [pi-model-inherit](https://github.com/jalaxy33/pi-model-inherit) | Simplify model customization by inheriting configs from existing models. |
-| [pi-private-models](https://github.com/jalaxy33/pi-private-models) | Hide private model configs from revealing to public. |
+| [pi-model-inherit](https://github.com/jalaxy33/pi-model-inherit) | Simplify model customization by inheriting configs from existing models |
+| [pi-private-models](https://github.com/jalaxy33/pi-private-models) | Hide private model configs from revealing to public |
