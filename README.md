@@ -94,6 +94,7 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 | Extension | Description |
 | -- | -- |
 | [pi-markdown-preview](https://github.com/omaclaren/pi-markdown-preview) | Preview conversation output with richer rendering (requires: [pandoc](https://pandoc.org/installing.html), any Chromium-based browser, [mermaid-cli](https://github.com/mermaid-js/mermaid-cli)) |
+| [pi-tps-meter](https://github.com/vskrch/pi-tps-meter) | Show live tokens per second and per-message history |
 
 ### Config Utils
 
