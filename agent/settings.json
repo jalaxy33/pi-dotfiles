@@ -15,7 +15,8 @@
       "extensions": ["-extensions/vision-proxy.ts"]
     },
     "npm:pi-intercom",
-    "npm:pi-context-view"
+    "npm:pi-context-view",
+    "npm:pi-tps-meter"
   ],
   "defaultThinkingLevel": "high",
   "skills": ["!~/.agents/skills/**"],
