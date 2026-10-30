@@ -7,6 +7,7 @@
 /pi-cache-optimizer-stats.d
 /intercom
 /pi-web-access
+/subagents
 
 .env
 models.private.json
