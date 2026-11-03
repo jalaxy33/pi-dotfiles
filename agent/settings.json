@@ -1,12 +1,11 @@
 {
-  "lastChangelogVersion": "1.4.0",
+  "lastChangelogVersion": "1.5.0",
   "defaultProvider": "deepseek",
   "defaultModel": "deepseek-flash",
   "defaultTools": ["+grep", "+find", "+codemode"],
   "packages": [
     "npm:pi-model-inherit",
     "npm:pi-private-models",
-    "./local-packages/pi-subagent-bootstrap",
     "npm:pi-web-access",
     "npm:@aliou/pi-guardrails",
     "npm:pi-markdown-preview",
@@ -16,11 +15,15 @@
     },
     "npm:pi-intercom",
     "npm:pi-context-view",
-    "npm:pi-tps-meter"
+    "npm:pi-tps-meter",
+    "git:https://gh-proxy.org/https://github.com/badlogic/pi-subagent.git"
   ],
   "defaultThinkingLevel": "high",
   "skills": ["!~/.agents/skills/**"],
   "npmCommand": ["bun"],
   "defaultProjectTrust": "always",
-  "theme": "dark"
+  "theme": "dark",
+  "extensionChangelogVersions": {
+    "{\"source\":\"npm:pi-web-access\",\"scope\":\"user\"}": "0.46.0"
+  }
 }
