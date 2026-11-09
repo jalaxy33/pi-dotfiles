@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+# Wrapper for pi that keeps agent/settings.json clean in git.
+#
+# The git clean filter drops the fields listed in "ignoreFields". Git skips the
+# filter when the file size changed, so after a run we refresh the index stat
+# for settings.json when its filtered content is unchanged.
+set -u
+
+self_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
+repo=$(cd -- "$self_dir/../.." && pwd)
+settings_path="agent/settings.json"
+
+find_real_pi() {
+  [ -n "${PI_REAL_BIN:-}" ] && { printf '%s\n' "$PI_REAL_BIN"; return; }
+  local dir
+  while IFS= read -r dir; do
+    [ -z "$dir" ] && continue
+    [ "$dir" = "$self_dir" ] && continue
+    if [ -x "$dir/pi" ] && ! [ "$dir/pi" -ef "${BASH_SOURCE[0]}" ]; then
+      printf '%s\n' "$dir/pi"
+      return
+    fi
+  done <<< "${PATH//:/$'\n'}"
+}
+
+ensure_filter_config() {
+  [ -d "$repo/.git" ] || return 0
+  if [ "$(git -C "$repo" config --get filter.pi-volatile.clean 2>/dev/null)" != "node agent/bin/pi-settings-clean.mjs" ]; then
+    git -C "$repo" config --local filter.pi-volatile.clean 'node agent/bin/pi-settings-clean.mjs' >/dev/null 2>&1 || true
+    git -C "$repo" config --local filter.pi-volatile.smudge cat >/dev/null 2>&1 || true
+  fi
+}
+
+refresh_settings_stat() {
+  [ -f "$repo/$settings_path" ] || return 0
+  local filtered indexed
+  filtered=$(git -C "$repo" hash-object --path "$settings_path" -- "$settings_path" 2>/dev/null) || return 0
+  indexed=$(git -C "$repo" rev-parse --quiet --verify ":$settings_path" 2>/dev/null) || return 0
+  [ "$filtered" = "$indexed" ] || return 0
+  git -C "$repo" add -- "$settings_path" >/dev/null 2>&1 || true
+}
+
+real_pi=$(find_real_pi)
+if [ -z "$real_pi" ]; then
+  echo "pi wrapper: could not find the real pi binary in PATH" >&2
+  exit 127
+fi
+
+ensure_filter_config
+"$real_pi" "$@"
+status=$?
+refresh_settings_stat
+exit "$status"
