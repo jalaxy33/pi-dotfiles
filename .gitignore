@@ -6,4 +6,3 @@
 .env
 agent/pi-blackhole/*
 !agent/pi-blackhole/pi-blackhole-config.json
-agent/tmp/
