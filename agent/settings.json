@@ -1,8 +1,15 @@
 {
-  "lastChangelogVersion": "1.5.0",
+  "ignoreFields": [
+    "lastChangelogVersion",
+    "extensionChangelogVersions"
+  ],
   "defaultProvider": "deepseek",
   "defaultModel": "deepseek-flash",
-  "defaultTools": ["+grep", "+find", "+codemode"],
+  "defaultTools": [
+    "+grep",
+    "+find",
+    "+codemode"
+  ],
   "packages": [
     "npm:pi-model-inherit",
     "npm:pi-private-models",
@@ -11,7 +18,9 @@
     "npm:pi-markdown-preview",
     {
       "source": "npm:pi-multimodal-proxy",
-      "extensions": ["-extensions/vision-proxy.ts"]
+      "extensions": [
+        "-extensions/vision-proxy.ts"
+      ]
     },
     "npm:pi-intercom",
     "npm:pi-context-view",
@@ -19,13 +28,12 @@
     "git:https://gh-proxy.org/https://github.com/badlogic/pi-subagent.git"
   ],
   "defaultThinkingLevel": "high",
-  "skills": ["!~/.agents/skills/**"],
-  "npmCommand": ["bun"],
+  "skills": [
+    "!~/.agents/skills/**"
+  ],
+  "npmCommand": [
+    "bun"
+  ],
   "defaultProjectTrust": "always",
-  "theme": "dark",
-  "extensionChangelogVersions": {
-    "{\"source\":\"npm:pi-web-access\",\"scope\":\"user\"}": "0.47.0",
-    "{\"source\":\"npm:@aliou/pi-guardrails\",\"scope\":\"user\"}": "0.23.0",
-    "{\"source\":\"npm:pi-context-view\",\"scope\":\"user\"}": "0.8.3"
-  }
+  "theme": "dark"
 }
