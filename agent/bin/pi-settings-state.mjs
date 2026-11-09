@@ -1,8 +1,9 @@
 // Move the fields listed in "ignoreFields" between settings.json and a side file.
 // restore: put stored values back before pi starts, since pi reads them from settings.json.
-// strip: take them out after pi exits, so the file stays clean when pi is not running.
+// strip: take them out again, so the file stays clean while pi is not using them.
 import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
-import { dirname } from "node:path";
+import { dirname, resolve } from "node:path";
+import { pathToFileURL } from "node:url";
 
 function readJson(path) {
   if (!existsSync(path)) return undefined;
@@ -16,11 +17,7 @@ function writeJson(path, value) {
   renameSync(tmp, path);
 }
 
-function main() {
-  const [mode, settingsPath, statePath] = process.argv.slice(2);
-  if ((mode !== "restore" && mode !== "strip") || !settingsPath || !statePath) {
-    throw new Error("usage: pi-settings-state.mjs <restore|strip> <settings> <state>");
-  }
+function move(mode, settingsPath, statePath) {
   const settings = readJson(settingsPath);
   if (!settings) return;
   const ignoreFields = Array.isArray(settings.ignoreFields) ? settings.ignoreFields : [];
@@ -48,8 +45,30 @@ function main() {
   if (stateChanged) writeJson(statePath, state);
 }
 
-try {
-  main();
-} catch (error) {
-  process.stderr.write(`pi settings state: ${error.message}\n`);
+function moveSafely(mode, settingsPath, statePath) {
+  try {
+    move(mode, settingsPath, statePath);
+  } catch (error) {
+    process.stderr.write(`pi settings state: ${error.message}\n`);
+  }
+}
+
+export function restoreSettings(settingsPath, statePath) {
+  moveSafely("restore", settingsPath, statePath);
+}
+
+export function stripSettings(settingsPath, statePath) {
+  moveSafely("strip", settingsPath, statePath);
+}
+
+const invokedDirectly =
+  process.argv[1] !== undefined && import.meta.url === pathToFileURL(resolve(process.argv[1])).href;
+
+if (invokedDirectly) {
+  const [mode, settingsPath, statePath] = process.argv.slice(2);
+  if ((mode !== "restore" && mode !== "strip") || !settingsPath || !statePath) {
+    process.stderr.write("usage: pi-settings-state.mjs <restore|strip> <settings.json> <state.json>\n");
+  } else {
+    moveSafely(mode, settingsPath, statePath);
+  }
 }
