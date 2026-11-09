@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
-# Wrapper for pi that keeps agent/settings.json clean in git.
-#
-# The git clean filter drops the fields listed in "ignoreFields". Git skips the
-# filter when the file size changed, so after a run we refresh the index stat
-# for settings.json when its filtered content is unchanged.
+# Wrapper for pi that keeps agent/settings.json free of the fields listed in
+# "ignoreFields" while pi is not running. Pi can only read those values from
+# settings.json, so they live in agent/tmp/ignored-settings.json and are put
+# back just before pi starts.
 set -u
 
 self_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
 repo=$(cd -- "$self_dir/../.." && pwd)
-settings_path="agent/settings.json"
+settings_file="$repo/agent/settings.json"
+state_file="$repo/agent/tmp/ignored-settings.json"
+state_script="$self_dir/pi-settings-state.mjs"
 
 find_real_pi() {
   [ -n "${PI_REAL_BIN:-}" ] && { printf '%s\n' "$PI_REAL_BIN"; return; }
@@ -23,6 +24,7 @@ find_real_pi() {
   done <<< "${PATH//:/$'\n'}"
 }
 
+# The git clean filter is a safety net for runs that bypass this wrapper.
 ensure_filter_config() {
   [ -d "$repo/.git" ] || return 0
   if [ "$(git -C "$repo" config --get filter.pi-volatile.clean 2>/dev/null)" != "node agent/bin/pi-settings-clean.mjs" ]; then
@@ -31,13 +33,15 @@ ensure_filter_config() {
   fi
 }
 
+# Git skips the clean filter when the file size changed, so refresh the index
+# stat for settings.json when its filtered content already matches the index.
 refresh_settings_stat() {
-  [ -f "$repo/$settings_path" ] || return 0
+  [ -f "$settings_file" ] || return 0
   local filtered indexed
-  filtered=$(git -C "$repo" hash-object --path "$settings_path" -- "$settings_path" 2>/dev/null) || return 0
-  indexed=$(git -C "$repo" rev-parse --quiet --verify ":$settings_path" 2>/dev/null) || return 0
+  filtered=$(git -C "$repo" hash-object --path agent/settings.json -- agent/settings.json 2>/dev/null) || return 0
+  indexed=$(git -C "$repo" rev-parse --quiet --verify ":agent/settings.json" 2>/dev/null) || return 0
   [ "$filtered" = "$indexed" ] || return 0
-  git -C "$repo" add -- "$settings_path" >/dev/null 2>&1 || true
+  git -C "$repo" add -- agent/settings.json >/dev/null 2>&1 || true
 }
 
 real_pi=$(find_real_pi)
@@ -46,8 +50,16 @@ if [ -z "$real_pi" ]; then
   exit 127
 fi
 
+# A nested pi (self-update, tools) runs while the outer wrapper owns the files.
+if [ -n "${PI_SETTINGS_WRAPPER:-}" ]; then
+  exec "$real_pi" "$@"
+fi
+export PI_SETTINGS_WRAPPER=1
+
 ensure_filter_config
+node "$state_script" restore "$settings_file" "$state_file" || true
 "$real_pi" "$@"
 status=$?
+node "$state_script" strip "$settings_file" "$state_file" || true
 refresh_settings_stat
 exit "$status"
