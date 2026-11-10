@@ -43,7 +43,7 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 
 - [pi](https://pi.dev/)
 - [bun](https://bun.sh) — the package installer pi uses (`npmCommand` in `agent/settings.json`)
-- [tmux](https://github.com/tmux/tmux) — `pi-subagent`
+- [tmux](https://github.com/tmux/tmux) — `pi-tmux-subagent`
 - [pandoc](https://pandoc.org/installing.html), any Chromium-based browser, [mermaid-cli](https://github.com/mermaid-js/mermaid-cli) — `pi-markdown-preview`
 
 ## Design Philosophy
@@ -68,7 +68,7 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 | Extension | Description |
 | -- | -- |
 | [pi-web-access](https://github.com/nicobailon/pi-web-access) | Web search, content extraction, video understanding |
-| [pi-subagent](https://github.com/badlogic/pi-subagent) | Observable persistent subagents in tmux. Installed by local [pi-subagent-bootstrap](./agent/local-packages/pi-subagent-bootstrap/README.md) (requires: [tmux](https://github.com/tmux/tmux)) |
+| [pi-tmux-subagent](https://github.com/jalaxy33/pi-tmux-subagent) | Observable persistent subagents in tmux, each with its own Pi session (fork of [badlogic/pi-subagent](https://github.com/badlogic/pi-subagent); requires: [tmux](https://github.com/tmux/tmux)) |
 | [pi-intercom](https://github.com/nicobailon/pi-intercom) | Session-to-session messaging between local pi sessions |
 
 ### Safety

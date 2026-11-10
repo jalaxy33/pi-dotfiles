@@ -1,38 +1,28 @@
 {
   "defaultProvider": "deepseek",
   "defaultModel": "deepseek-flash",
-  "defaultTools": [
-    "+grep",
-    "+find",
-    "+codemode"
-  ],
+  "defaultTools": ["+grep", "+find", "+codemode"],
   "packages": [
     "npm:pi-model-inherit",
     "npm:pi-private-models",
+    "npm:@jalaxy33/pi-tmux-subagent",
     "npm:pi-web-access",
     "npm:@aliou/pi-guardrails",
     "npm:pi-markdown-preview",
     {
       "source": "npm:pi-multimodal-proxy",
-      "extensions": [
-        "-extensions/vision-proxy.ts"
-      ]
+      "extensions": ["-extensions/vision-proxy.ts"]
     },
     "npm:pi-intercom",
     "npm:pi-context-view",
-    "npm:pi-tps-meter",
-    "git:https://gh-proxy.org/https://github.com/badlogic/pi-subagent.git"
+    "npm:pi-tps-meter"
   ],
   "defaultThinkingLevel": "high",
-  "skills": [
-    "!~/.agents/skills/**"
-  ],
-  "npmCommand": [
-    "bun"
-  ],
+  "skills": ["!~/.agents/skills/**"],
+  "npmCommand": ["bun"],
   "defaultProjectTrust": "always",
   "theme": "dark",
-  "lastChangelogVersion": "1.5.0",
+  "lastChangelogVersion": "1.5.1",
   "extensionChangelogVersions": {
     "{\"source\":\"npm:pi-web-access\",\"scope\":\"user\"}": "0.47.0",
     "{\"source\":\"npm:@aliou/pi-guardrails\",\"scope\":\"user\"}": "0.23.0",
