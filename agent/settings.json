@@ -6,8 +6,8 @@
     "npm:pi-model-inherit",
     "npm:pi-private-models",
     "npm:@jalaxy33/pi-tmux-subagent",
+    "npm:@jalaxy33/pi-permit",
     "npm:pi-web-access",
-    "npm:@aliou/pi-guardrails",
     "npm:pi-markdown-preview",
     {
       "source": "npm:pi-multimodal-proxy",

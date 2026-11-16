@@ -75,7 +75,7 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 
 | Extension | Description |
 | -- | -- |
-| [pi-guardrails](https://github.com/aliou/pi-guardrails) | Permission gates for dangerous operations (git push, rm, etc.) |
+| [pi-permit](https://github.com/jalaxy33/pi-permit) | Permission gate for commands, protected paths and paths outside the workspace |
 
 ### Multimodal
 
