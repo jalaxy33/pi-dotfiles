@@ -9,7 +9,7 @@ import { getAgentDir, getPackageDir, type ExtensionAPI } from "@earendil-works/p
 // once after each update.
 
 function stateFile(): string {
-	return join(getAgentDir(), ".pi-version");
+	return join(getAgentDir(), ".changelog-version");
 }
 
 function readVersion(): string | undefined {
