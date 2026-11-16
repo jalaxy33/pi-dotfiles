@@ -22,10 +22,5 @@
   "npmCommand": ["bun"],
   "defaultProjectTrust": "always",
   "theme": "dark",
-  "lastChangelogVersion": "1.5.1",
-  "extensionChangelogVersions": {
-    "{\"source\":\"npm:pi-web-access\",\"scope\":\"user\"}": "0.47.0",
-    "{\"source\":\"npm:@aliou/pi-guardrails\",\"scope\":\"user\"}": "0.23.0",
-    "{\"source\":\"npm:pi-context-view\",\"scope\":\"user\"}": "0.8.3"
-  }
+  "lastChangelogVersion": "1.5.2"
 }
