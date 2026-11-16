@@ -19,4 +19,5 @@ mcp-npx-cache.json
 mcp-onboarding.json
 trust.json
 
+.*-version
 **/*.tmp

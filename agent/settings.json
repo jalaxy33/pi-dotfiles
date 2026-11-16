@@ -21,6 +21,5 @@
   "skills": ["!~/.agents/skills/**"],
   "npmCommand": ["bun"],
   "defaultProjectTrust": "always",
-  "theme": "dark",
-  "lastChangelogVersion": "1.5.2"
+  "theme": "dark"
 }
