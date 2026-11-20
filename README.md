@@ -45,9 +45,9 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
    git config core.hooksPath .githooks
    ```
 
-   Commits must read `<theme>: <one-line description>`, where theme is one of
-   `agent`, `ext`, `models`, `docs`, `repo`. The hook in `.githooks/commit-msg`
-   rejects anything else.
+   Commit messages are one lowercase line saying what changed; the hook in
+   `.githooks/commit-msg` rejects empty openers like `update` or `wip`, single
+   words, subjects over 72 characters, trailing periods and bodies.
 
 ## Requirements
 

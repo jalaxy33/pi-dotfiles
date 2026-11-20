@@ -1,9 +1,10 @@
 #!/bin/sh
-# Rejects commit messages that do not match "<theme>: <one-line description>".
+# Rejects lazy commit messages: banned openers, one-word subjects, overlong
+# subjects, trailing periods, multi-line bodies.
 # Enabled per clone with: git config core.hooksPath .githooks
 
-themes='agent|ext|models|docs|repo'
 max_length=72
+banned='update|updates|updaye|daily|wip|minor|misc|stuff|various|tweak|tweaks|edit|edits|small|some|change|changes|more'
 
 message=$1
 subject=$(sed -e '/^#/d' "$message" | awk 'NF { print; exit }')
@@ -17,20 +18,24 @@ esac
 fail() {
   echo "commit-msg: $1" >&2
   echo "" >&2
-  printf '%s\n' "expected: <theme>: <one-line description>" \
-    "themes:   agent ext models docs repo" \
-    "example:  ext: add pi-intercom" >&2
+  printf '%s\n' "say what changed, in one line:" \
+    "  add pi-intercom" \
+    "  bump guardrails to 0.19.0" \
+    "  ignore volatile settings fields" >&2
   exit 1
 }
 
 [ -n "$subject" ] || fail "empty commit message"
 [ "$body_lines" -le 1 ] || fail "keep the message to a single line"
 
-printf '%s' "$subject" | grep -qE "^($themes): [a-z0-9]" ||
-  fail "subject must start with a known theme followed by ': '"
+printf '%s' "$subject" | grep -qE "^($banned)( |:|,|$)" &&
+  fail "'$(printf '%s' "$subject" | awk '{print $1}' | tr -d ':')' says nothing about the change"
 
+[ "$(printf '%s' "$subject" | wc -w | tr -d ' ')" -ge 2 ] ||
+  fail "one word is not a description"
+
+printf '%s' "$subject" | grep -qE '^[a-z]' || fail "start with a lowercase word"
 [ ${#subject} -le $max_length ] || fail "subject is ${#subject} characters, max is $max_length"
-
 printf '%s' "$subject" | grep -q '\.$' && fail "drop the trailing period"
 
 exit 0
