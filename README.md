@@ -39,6 +39,16 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 
    Skills in `~/.agents/skills/` are not auto-loaded; use `pi --skill <path>` when needed.
 
+4. Enable the commit message hook:
+
+   ```sh
+   git config core.hooksPath .githooks
+   ```
+
+   Commits must read `<theme>: <one-line description>`, where theme is one of
+   `agent`, `ext`, `models`, `docs`, `repo`. The hook in `.githooks/commit-msg`
+   rejects anything else.
+
 ## Requirements
 
 - [pi](https://pi.dev/)

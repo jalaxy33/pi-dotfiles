@@ -1,0 +1,36 @@
+#!/bin/sh
+# Rejects commit messages that do not match "<theme>: <one-line description>".
+# Enabled per clone with: git config core.hooksPath .githooks
+
+themes='agent|ext|models|docs|repo'
+max_length=72
+
+message=$1
+subject=$(sed -e '/^#/d' "$message" | awk 'NF { print; exit }')
+body_lines=$(sed -e '/^#/d' "$message" | awk 'NF' | wc -l | tr -d ' ')
+
+# Merge commits are written by git itself.
+case "$subject" in
+  "Merge "*) exit 0 ;;
+esac
+
+fail() {
+  echo "commit-msg: $1" >&2
+  echo "" >&2
+  printf '%s\n' "expected: <theme>: <one-line description>" \
+    "themes:   agent ext models docs repo" \
+    "example:  ext: add pi-intercom" >&2
+  exit 1
+}
+
+[ -n "$subject" ] || fail "empty commit message"
+[ "$body_lines" -le 1 ] || fail "keep the message to a single line"
+
+printf '%s' "$subject" | grep -qE "^($themes): [a-z0-9]" ||
+  fail "subject must start with a known theme followed by ': '"
+
+[ ${#subject} -le $max_length ] || fail "subject is ${#subject} characters, max is $max_length"
+
+printf '%s' "$subject" | grep -q '\.$' && fail "drop the trailing period"
+
+exit 0
