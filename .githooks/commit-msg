@@ -34,7 +34,6 @@ printf '%s' "$subject" | grep -qE "^($banned)( |:|,|$)" &&
 [ "$(printf '%s' "$subject" | wc -w | tr -d ' ')" -ge 2 ] ||
   fail "one word is not a description"
 
-printf '%s' "$subject" | grep -qE '^[a-z]' || fail "start with a lowercase word"
 [ ${#subject} -le $max_length ] || fail "subject is ${#subject} characters, max is $max_length"
 printf '%s' "$subject" | grep -q '\.$' && fail "drop the trailing period"
 

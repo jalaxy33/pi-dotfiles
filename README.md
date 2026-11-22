@@ -7,19 +7,19 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 1. (Optional) Backup existing `.pi` config folder:
 
    ```sh
-   mv ~/.pi ~/.pi.bak
+   mv $HOME/.pi $HOME/.pi.bak
    ```
 
-2. Clone remote configs to `~/.pi`:
+2. Clone remote configs to `$HOME/.pi`:
 
    ```sh
-   git clone https://github.com/jalaxy33/pi-dotfiles ~/.pi
+   git clone https://github.com/jalaxy33/pi-dotfiles $HOME/.pi
    ```
 
     <details><summary>Easier clone for CN user</summary>
 
    ```sh
-   git clone https://gh-proxy.org/https://github.com/jalaxy33/pi-dotfiles ~/.pi
+   git clone https://gh-proxy.org/https://github.com/jalaxy33/pi-dotfiles $HOME/.pi
    ```
 
     </details>
@@ -27,27 +27,25 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 3. (Optional) If you want to use the same [skills I'm using](https://github.com/jalaxy33/skills-using):
 
    ```sh
-   # (optional) backup ~/.agents
-   mv ~/.agents ~/.agents-bak
+   # (optional) backup $HOME/.agents
+   mv $HOME/.agents $HOME/.agents-bak
 
    # clone skills repo
-   git clone https://github.com/jalaxy33/skills-using ~/.agents
+   git clone https://github.com/jalaxy33/skills-using $HOME/.agents
 
    # update skills to latest
    npx skills update -g
    ```
 
-   Skills in `~/.agents/skills/` are not auto-loaded; use `pi --skill <path>` when needed.
+   Skills in `$HOME/.agents/skills/` are not auto-loaded; use `pi --skill <path>` when needed.
 
-4. Enable the commit message hook:
+4. (Only if you maintain this repo) Enable the commit message hook:
 
    ```sh
    git config core.hooksPath .githooks
    ```
 
-   Commit messages are one lowercase line saying what changed; the hook in
-   `.githooks/commit-msg` rejects empty openers like `update` or `wip`, single
-   words, subjects over 72 characters, trailing periods and bodies.
+   `.githooks/commit-msg` rejects vague or sprawling subjects.
 
 ## Requirements
 
@@ -63,7 +61,7 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 - **Fit my workflow, not for everyone** — solve real needs, not chase universality
 - **Extend for what's missing** — sub-agents, vision — added via community extensions
 - **Restrained yet flexible safety** — guard only irreversible operations (git push, delete), no noisy prompts
-- **Avoid unnecessary global context** — `~/.agents/skills/` are not auto-loaded, passed in with `pi --skill` when a task needs them
+- **Avoid unnecessary global context** — `$HOME/.agents/skills/` are not auto-loaded, passed in with `pi --skill` when a task needs them
 
 ### Deliberately Unused
 
