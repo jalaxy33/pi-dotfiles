@@ -10,13 +10,15 @@ import { getAgentDir, type ExtensionAPI, type ExtensionContext } from "@earendil
 // names a package or tool that no longer exists is reported instead of silently doing
 // nothing the way `defaultTools: ["-name"]` does.
 
+type When = "always" | "interactive" | "headless";
+
 interface Rule {
 	disable: string[];
-	when?: "always" | "interactive" | "headless";
+	when: When;
 }
 
 interface PolicyFile {
-	packages?: Record<string, Rule>;
+	packages?: Record<string, { disable?: unknown; when?: unknown }>;
 }
 
 interface SettingsFile {
@@ -25,6 +27,7 @@ interface SettingsFile {
 
 const POLICY_FILE = "tool-policy.json";
 const SETTINGS_FILE = "settings.json";
+const WHEN_VALUES: When[] = ["always", "interactive", "headless"];
 
 // Global first, then the project file; later entries win for the same package.
 function configPaths(): string[] {
@@ -39,6 +42,10 @@ function readJson(path: string, problems: string[]): unknown {
 		problems.push(`${path}: ${error instanceof Error ? error.message : String(error)}`);
 		return undefined;
 	}
+}
+
+function trimSlash(path: string): string {
+	return path.length > 1 && path.endsWith(sep) ? path.slice(0, -sep.length) : path;
 }
 
 // Package source → the directory a relative local source resolves against.
@@ -69,11 +76,15 @@ function readRules(): { rules: Record<string, Rule>; problems: string[] } {
 				problems.push(`${path}: "${source}" has no "disable" list`);
 				continue;
 			}
-			const disable = rule.disable.filter((name) => typeof name === "string");
+			const disable = rule.disable.filter((name): name is string => typeof name === "string");
 			if (disable.length !== rule.disable.length) {
 				problems.push(`${path}: "${source}" drops non-string entries from "disable"`);
 			}
-			rules[trimSlash(source)] = { disable, when: rule.when };
+			const when = rule.when ?? "always";
+			if (!WHEN_VALUES.includes(when as When)) {
+				problems.push(`${path}: "${source}" has no valid "when" (use always, interactive, or headless)`);
+			}
+			rules[trimSlash(source)] = { disable, when: WHEN_VALUES.includes(when as When) ? (when as When) : "always" };
 		}
 	}
 	return { rules, problems };
@@ -85,23 +96,45 @@ function npmName(source: string): string {
 	return at > 0 ? spec.slice(0, at) : spec;
 }
 
-function trimSlash(path: string): string {
-	return path.length > 1 && path.endsWith(sep) ? path.slice(0, -sep.length) : path;
+// The nearest package.json above the tool file names its package, which holds for npm, git,
+// bun and pnpm layouts. Synthetic paths such as `builtin:read` name no package.
+function owningPackageName(toolPath: string, cache: Map<string, string | undefined>): string | undefined {
+	if (cache.has(toolPath)) return cache.get(toolPath);
+	let name: string | undefined;
+	if (toolPath.includes(sep) && !toolPath.startsWith("<")) {
+		let dir = dirname(toolPath);
+		for (let depth = 0; depth < 6; depth++) {
+			const manifest = join(dir, "package.json");
+			if (existsSync(manifest)) {
+				const parsed = readJson(manifest, []) as { name?: unknown } | undefined;
+				if (typeof parsed?.name === "string") name = parsed.name;
+				break;
+			}
+			const parent = dirname(dir);
+			if (parent === dir) break;
+			dir = parent;
+		}
+	}
+	cache.set(toolPath, name);
+	return name;
 }
 
 // npm and git packages install under a node_modules directory named after the package;
 // local sources are declared by path, relative to the settings file that holds them.
-function sourceOwnsTool(source: string, baseDir: string, toolPath: string): boolean {
+function sourceOwnsTool(source: string, baseDir: string, toolPath: string, packageName: string | undefined): boolean {
 	if (!toolPath) return false;
 	if (source.startsWith("npm:")) {
-		return toolPath.includes(`${sep}node_modules${sep}${npmName(source)}${sep}`);
+		const name = npmName(source);
+		return packageName === name || toolPath.includes(`${sep}node_modules${sep}${name}${sep}`);
 	}
 	if (source.startsWith("git:") || /^https?:\/\//.test(source)) {
 		const repo = source.replace(/^(git:|https?:\/\/)/, "").replace(/^github\.com\//, "").replace(/@[^/]*$/, "");
 		const candidates = [repo, repo.split("/").slice(-2).join("/"), repo.split("/").pop() ?? ""];
+		if (packageName && candidates.includes(packageName)) return true;
 		return candidates.some((name) => name.length > 0 && toolPath.includes(`${sep}node_modules${sep}${name}${sep}`));
 	}
-	const dir = trimSlash(isAbsolute(source) ? source : resolve(baseDir, source));
+	const expanded = source.startsWith("~") ? join(homedir(), source.slice(1)) : source;
+	const dir = trimSlash(isAbsolute(expanded) ? expanded : resolve(baseDir, expanded));
 	return toolPath === dir || toolPath.startsWith(dir + sep);
 }
 
@@ -117,6 +150,7 @@ function applyPolicy(pi: ExtensionAPI, hasUI: boolean): string[] {
 	const installed = readPackages();
 	const problems = [...rules.problems, ...installed.problems];
 	const tools = new Map(pi.getAllTools().map((tool) => [tool.name, tool]));
+	const packageNames = new Map<string, string | undefined>();
 	const disable = new Set<string>();
 	for (const [source, rule] of Object.entries(rules.rules)) {
 		if (!appliesToSession(rule, hasUI)) continue;
@@ -133,7 +167,7 @@ function applyPolicy(pi: ExtensionAPI, hasUI: boolean): string[] {
 				continue;
 			}
 			const toolPath = tool.sourceInfo?.path ?? "";
-			if (!sourceOwnsTool(source, baseDir, toolPath)) {
+			if (!sourceOwnsTool(source, baseDir, toolPath, owningPackageName(toolPath, packageNames))) {
 				problems.push(`${source}: "${name}" is registered by ${toolPath || "an unknown source"}`);
 				continue;
 			}
@@ -147,8 +181,8 @@ function applyPolicy(pi: ExtensionAPI, hasUI: boolean): string[] {
 }
 
 export default function (pi: ExtensionAPI) {
-	// agent_start repeats the pass because packages and MCP servers can register tools after
-	// session_start; its problems are skipped there so a warning is not repeated every turn.
+	// before_agent_start repeats the pass because packages and MCP servers can register tools
+	// after session_start; its problems are skipped there so a warning is not repeated per run.
 	const run = (ctx: ExtensionContext, warn: boolean) => {
 		const problems = applyPolicy(pi, ctx.hasUI);
 		if (warn && problems.length > 0 && ctx.hasUI) {
@@ -157,5 +191,5 @@ export default function (pi: ExtensionAPI) {
 	};
 	pi.on("session_start", (_event, ctx) => run(ctx, true));
 	pi.on("session_tree", (_event, ctx) => run(ctx, true));
-	pi.on("agent_start", (_event, ctx) => run(ctx, false));
+	pi.on("before_agent_start", (_event, ctx) => run(ctx, false));
 }
