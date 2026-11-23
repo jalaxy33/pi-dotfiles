@@ -4,20 +4,21 @@
 /logs
 /skills
 /fff
-/pi-cache-optimizer-stats.d
 /intercom
 /pi-web-access
 /subagents
+/*-cache*
+/*_cache*
 
 .env
 models.private.json
 models-store.json
 auth.json
-pi-cache-*.json
-mcp-cache.json
-mcp-npx-cache.json
 mcp-onboarding.json
 trust.json
 
 .*-version
 **/*.tmp
+**/*_cache
+**/*-cache
+**/*cache*.json
