@@ -1,7 +1,7 @@
-import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
-import { createRequire } from "node:module";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { getAgentDir, getPackageDir, type ExtensionAPI } from "@earendil-works/pi-coding-agent";
+import { getAgentDir, type ExtensionAPI } from "@earendil-works/pi-coding-agent";
+import { patchSettingsCopies } from "./shared/patch-settings.ts";
 
 // Pi stores the last shown changelog version in settings.json, so the file
 // changes on every update. Keep the behaviour, but keep the version in a
@@ -52,38 +52,9 @@ function patchSettingsManager(mod: any): boolean {
 	return true;
 }
 
-// Pi may run from the bundled chunks or from plain dist modules.
-// Load the copy this process already uses so the prototype patch applies.
-function patchLoadedCopies(): number {
-	const packageDir = getPackageDir();
-	const requireCopy = createRequire(join(packageDir, "package.json"));
-	const files: string[] = [];
-
-	const chunksDir = join(packageDir, "dist", "bundle", "chunks");
-	if (existsSync(chunksDir)) {
-		for (const name of readdirSync(chunksDir)) {
-			if (!name.endsWith(".js")) continue;
-			const file = join(chunksDir, name);
-			if (/export\{[^}]*\bSettingsManager\b/.test(readFileSync(file, "utf8"))) files.push(file);
-		}
-	}
-	const coreFile = join(packageDir, "dist", "core", "settings-manager.js");
-	if (existsSync(coreFile)) files.push(coreFile);
-
-	let patched = 0;
-	for (const file of files) {
-		try {
-			if (patchSettingsManager(requireCopy(file))) patched++;
-		} catch {
-			// not the copy this process loaded
-		}
-	}
-	return patched;
-}
-
 export default function (pi: ExtensionAPI) {
 	migrateFromSettings();
-	if (patchLoadedCopies() > 0) return;
+	if (patchSettingsCopies(patchSettingsManager) > 0) return;
 	pi.on("session_start", (_event, ctx) => {
 		ctx.ui.notify("changelog-version-file: could not patch Pi, settings.json keeps lastChangelogVersion.", "warning");
 	});
