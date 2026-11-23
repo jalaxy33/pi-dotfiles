@@ -12,7 +12,7 @@ const here = dirname(fileURLToPath(import.meta.url));
 const agentDir = join(here, "..", "..");
 const link = join(agentDir, "node_modules");
 const target = join(agentDir, "npm", "node_modules");
-const tests = ["patch-settings.test.mjs", "tool-policy.test.mjs"];
+const tests = ["patch-settings.test.mjs", "tool-policy.test.mjs", "undeclared-tools.test.mjs"];
 
 if (!existsSync(target)) {
 	console.error(`cannot run: ${target} does not exist, install the packages first`);
