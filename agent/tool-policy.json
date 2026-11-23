@@ -1,0 +1,8 @@
+{
+  "packages": {
+    "npm:pi-markdown-preview": {
+      "disable": ["preview_export"],
+      "when": "interactive"
+    }
+  }
+}
