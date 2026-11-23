@@ -22,3 +22,5 @@ trust.json
 **/*_cache
 **/*-cache
 **/*cache*.json
+
+/node_modules
