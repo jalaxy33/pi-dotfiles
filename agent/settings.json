@@ -13,9 +13,9 @@
       "source": "npm:pi-multimodal-proxy",
       "extensions": ["-extensions/vision-proxy.ts"]
     },
-    "npm:pi-intercom",
     "npm:pi-context-view",
-    "npm:pi-tps-meter"
+    "npm:pi-tps-meter",
+    "git:github.com/jalaxy33/pi-intercom@deferred-intercom-tool"
   ],
   "defaultThinkingLevel": "high",
   "skills": ["!~/.agents/skills/**"],
