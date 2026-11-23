@@ -6,7 +6,7 @@ import { join } from "node:path";
 
 const changelog = await import("../changelog-version-file.ts");
 const noExt = await import("../no-ext-changelog.ts");
-const shared = await import("./patch-settings.ts");
+const shared = await import("../shared/patch-settings.ts");
 
 const CORE = `class SettingsManager {
   setLastChangelogVersion() { throw new Error("core setLastChangelogVersion ran"); }
