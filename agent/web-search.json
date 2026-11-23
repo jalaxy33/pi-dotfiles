@@ -1,8 +1,13 @@
 {
   "workflow": "none",
+  "toolExposure": "deferred",
+  "toolActivation": "none",
+  "commands": { "curator": { "enabled": false } },
   "searchRouting": {
     "providers": ["firecrawl", "tavily", "deepseek"],
     "fallbackOn": [
+      "empty",
+      "domain-miss",
       "transient",
       "quota",
       "network",
@@ -12,7 +17,5 @@
   },
   "firecrawlBaseUrl": "https://api.firecrawl.dev",
   "firecrawlApiKey": "$FIRECRAWL_API_KEY",
-  "ssrf": {
-    "allowRanges": ["198.18.0.0/15"]
-  }
+  "ssrf": { "allowRanges": ["198.18.0.0/15"] }
 }
