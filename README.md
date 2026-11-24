@@ -61,7 +61,9 @@ Personal configuration and settings for [Pi Coding Agent](https://pi.dev/).
 - **Fit my workflow, not for everyone** — solve real needs, not chase universality
 - **Extend for what's missing** — sub-agents, vision — added via community extensions
 - **Restrained yet flexible safety** — guard only irreversible operations (git push, delete), no noisy prompts
-- **Avoid unnecessary global context** — `$HOME/.agents/skills/` are not auto-loaded, passed in with `pi --skill` when a task needs them
+- **Avoid unnecessary global context** — whatever a task doesn't need stays out of the prompt:
+  - `$HOME/.agents/skills/` are not auto-loaded, passed in with `pi --skill` when a task needs them
+  - low-frequency tools stay undeclared and are called from `codemode` scripts
 
 ### Deliberately Unused
 
