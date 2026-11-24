@@ -11,7 +11,7 @@
     "npm:pi-markdown-preview",
     "npm:pi-context-view",
     "npm:pi-tps-meter",
-    "git:github.com/nicobailon/pi-intercom"
+    "npm:pi-intercom"
   ],
   "defaultThinkingLevel": "high",
   "skills": ["!~/.agents/skills/**"],
