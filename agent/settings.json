@@ -15,7 +15,7 @@
     },
     "npm:pi-context-view",
     "npm:pi-tps-meter",
-    "git:github.com/jalaxy33/pi-intercom@deferred-intercom-tool"
+    "git:github.com/nicobailon/pi-intercom"
   ],
   "defaultThinkingLevel": "high",
   "skills": ["!~/.agents/skills/**"],
