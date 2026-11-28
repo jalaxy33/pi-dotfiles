@@ -1,13 +1,4 @@
 {
-  "default": {
-    "providers": {
-      "*": {
-        "compat": {
-          "sendSessionAffinityHeaders": true
-        }
-      }
-    }
-  },
   "providers": {
     "deepseek": {
       "apiKey": "$DEEPSEEK_API_KEY"
