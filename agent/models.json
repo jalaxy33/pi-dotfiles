@@ -11,27 +11,6 @@
   "providers": {
     "deepseek": {
       "apiKey": "$DEEPSEEK_API_KEY"
-    },
-    "zai": {
-      "apiKey": "$ZAI_API_KEY"
-    },
-    "zai-coding-cn": {
-      "apiKey": "$ZAI_API_KEY"
-    },
-    "ark": {
-      "baseUrl": "https://ark.cn-beijing.volces.com/api/coding/v3",
-      "api": "openai-completions",
-      "apiKey": "$ARK_API_KEY",
-      "models": [
-        {
-          "id": "glm-5.3",
-          "inherit": "zai/glm-5.3"
-        },
-        {
-          "id": "glm-5.3-flash",
-          "inherit": "zai/glm-5.3-flash"
-        }
-      ]
     }
   }
 }
